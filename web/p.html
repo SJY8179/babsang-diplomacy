@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>밥상외교 · 내 조건 입력</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Nanum+Pen+Script&family=Noto+Serif+KR:wght@700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
+<link rel="stylesheet" href="/static/tw.css">
+<link rel="stylesheet" href="/static/bapsang.css">
+</head>
+<body class="bg-secondary-200 min-h-screen px-3 py-8">
+<main class="mx-auto max-w-[560px] paper-grain bg-background-50 border border-background-300 px-5 md:px-8 pt-5 pb-8">
+  <div class="flex items-baseline justify-between gap-3 border-b border-foreground-900/75 pb-2"><span class="text-[9.5px] tracking-[0.26em] text-foreground-700">BAPSANG DIPLOMACY — 내 조건 입력</span><span class="text-[9.5px] tracking-[0.16em] text-foreground-500">1분</span></div>
+  <h1 id="t" class="font-heading text-[1.9rem] leading-[1.25] tracking-[-0.04em] mt-6">회식</h1>
+  <p id="w" class="font-hand text-[18px] text-primary-600 mt-1"></p>
+  <p class="text-[12.5px] text-foreground-600 leading-[1.95] mt-3"><strong id="n" class="text-foreground-950 font-medium"></strong>님, 아래만 채우면 끝나요. 로그인은 필요 없어요. 입력한 내용은 이번 회식 장소를 고르는 데만 써요.</p>
+  <form id="f" class="grid gap-3.5 mt-6 text-[11px] text-foreground-600">
+    <label>출발하는 역<input id="origin" class="field mt-1" placeholder="예: 신촌" required></label>
+    <label>1인 예산(원)<input id="budget" class="field mt-1" type="number" step="1000" min="0" placeholder="예: 25000" required></label>
+    <label>식단<select id="diet" class="field mt-1"><option>없음</option><option>채식(페스코)</option><option>채식</option><option>비건</option><option>글루텐프리</option></select></label>
+    <label>알레르기<input id="allergy" class="field mt-1" placeholder="예: 갑각류 (없으면 비워 두세요)"></label>
+    <label>먹고 싶은 것<input id="food" class="field mt-1" placeholder="예: 한식, 파스타"></label>
+    <label>원하는 분위기<input id="mood" class="field mt-1" placeholder="예: 조용한 분위기, 술 한잔, 룸 좌석"></label>
+    <button class="mt-2 inline-flex items-center justify-center gap-2 bg-primary-500 hover:bg-primary-600 text-background-50 px-5 py-3 rounded-[3px] text-[13px] cursor-pointer"><i class="ri-check-line"></i>저장하기</button>
+    <p id="msg" class="text-[12px] text-secondary-800 min-h-[1.5em]"></p>
+  </form>
+  <p class="font-hand text-[16px] text-primary-600 mt-2">* 조건이 바뀌면 이 링크로 다시 들어와 고치면 돼요</p>
+</main>
+<script>
+const token = location.pathname.split("/").pop();
+const $ = (s) => document.querySelector(s);
+(async () => {
+  const r = await fetch(`/api/p/${token}`);
+  if (!r.ok) { $("#t").textContent = "링크가 올바르지 않아요"; $("#f").remove(); return; }
+  const { participant: p, meeting: m } = await r.json();
+  $("#t").textContent = m.title; $("#n").textContent = p.name;
+  if (m.when_at) { const d = new Date(m.when_at); $("#w").textContent = `${d.getMonth() + 1}월 ${d.getDate()}일 ${d.getHours()}시${m.area ? ` · ${m.area} 일대` : ""}`; }
+  for (const k of ["origin", "budget", "diet", "allergy", "food", "mood"]) if (p[k] != null) $(`#${k}`).value = p[k];
+})();
+$("#f").onsubmit = async (e) => {
+  e.preventDefault();
+  const body = { origin: $("#origin").value.trim(), budget: Number($("#budget").value) || null, diet: $("#diet").value,
+    allergy: $("#allergy").value.trim() || "없음", food: $("#food").value.trim(), mood: $("#mood").value.trim() };
+  const r = await fetch(`/api/p/${token}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  $("#msg").textContent = r.ok ? "저장했어요. 이 창은 닫아도 돼요." : "저장하지 못했어요. 다시 시도해 주세요.";
+};
+</script>
+</body>
+</html>

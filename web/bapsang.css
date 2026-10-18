@@ -1,0 +1,28 @@
+:root { --font-heading: "Noto Serif KR", "Gowun Batang", serif; --font-body: "IBM Plex Sans KR", sans-serif; --font-label: "IBM Plex Sans KR", sans-serif; --font-hand: "Nanum Pen Script", "Gowun Batang", cursive;
+  --background-50: .963 .014 82; --background-100: .938 .02 81; --background-200: .9 .026 80; --background-300: .848 .031 78; --background-400: .775 .034 76; --background-500: .695 .034 74; --background-600: .6 .032 72; --background-700: .5 .028 70; --background-800: .4 .023 68; --background-900: .3 .018 66; --background-950: .22 .013 64;
+  --primary-50: .972 .018 40; --primary-100: .94 .038 38; --primary-200: .885 .068 36; --primary-300: .805 .1 35; --primary-400: .665 .138 34; --primary-500: .575 .155 33; --primary-600: .505 .143 32; --primary-700: .435 .124 31; --primary-800: .37 .102 31; --primary-900: .32 .08 30; --primary-950: .25 .06 30;
+  --accent-50: .975 .022 65; --accent-100: .955 .038 63; --accent-200: .91 .062 61; --accent-300: .86 .085 59; --accent-400: .815 .1 58; --accent-500: .775 .108 56; --accent-600: .695 .105 54; --accent-700: .585 .095 51; --accent-800: .475 .078 49; --accent-900: .38 .062 47; --accent-950: .28 .048 45;
+  --secondary-50: .975 .018 145; --secondary-100: .945 .032 145; --secondary-200: .895 .048 145; --secondary-300: .82 .065 146; --secondary-400: .72 .08 147; --secondary-500: .615 .088 148; --secondary-600: .53 .08 148; --secondary-700: .45 .068 148; --secondary-800: .37 .056 148; --secondary-900: .3 .046 148; --secondary-950: .22 .034 148;
+  --foreground-50: .972 .007 60; --foreground-100: .935 .009 58; --foreground-200: .865 .011 56; --foreground-300: .775 .013 55; --foreground-400: .68 .014 55; --foreground-500: .6 .014 55; --foreground-600: .52 .014 55; --foreground-700: .45 .014 55; --foreground-800: .39 .014 55; --foreground-900: .33 .013 55; --foreground-950: .285 .012 55; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: oklch(var(--background-50)); color: oklch(var(--foreground-950)); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+h1, h2, h3 { font-family: var(--font-heading); letter-spacing: -0.032em; font-weight: 700; }
+::selection { background: oklch(var(--accent-300)); color: oklch(var(--foreground-950)); }
+.paper-grain { position: relative; }
+.paper-grain::after { content: ""; pointer-events: none; background-image: radial-gradient(oklch(var(--foreground-950) / .05) .5px, transparent .7px); opacity: .4; border-radius: inherit; background-size: 5px 5px; position: absolute; inset: 0; }
+.rule-dotted { border-top: 1px dotted oklch(var(--foreground-400) / .5); }
+.kicker { font-family: var(--font-label); letter-spacing: .24em; text-transform: uppercase; color: oklch(var(--foreground-500)); font-size: 10px; }
+.tape { background: oklch(var(--accent-200) / .72); border-left: 1px dashed oklch(var(--accent-500) / .45); border-right: 1px dashed oklch(var(--accent-500) / .45); width: 58px; height: 17px; position: absolute; z-index: 2; }
+.hand-underline { background-image: linear-gradient(to right, oklch(var(--primary-400) / .55), oklch(var(--primary-400) / .55)); background-position: 0 92%; background-repeat: no-repeat; background-size: 100% 3px; }
+@keyframes fadeUp { 0% { opacity: 0; transform: translateY(14px); } 100% { opacity: 1; transform: none; } }
+@keyframes inkIn { 0% { opacity: 0; transform: translateY(10px) rotate(-.5deg); } 100% { opacity: 1; transform: none; } }
+@keyframes stamp { 0% { opacity: 0; transform: scale(1.4) rotate(-8deg); } 100% { opacity: 1; transform: scale(1) rotate(-4deg); } }
+.fade-up { animation: fadeUp .7s cubic-bezier(.22,.61,.36,1) both; }
+.ink-in { animation: inkIn .5s cubic-bezier(.22,.61,.36,1) both; }
+.stamp { animation: stamp .45s cubic-bezier(.22,.61,.36,1) both; }
+.pulse-dot { animation: pulse 1.2s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .25; } }
+dialog::backdrop { background: oklch(var(--foreground-950) / .35); }
+.field { width: 100%; border: 1px solid oklch(var(--background-400)); background: oklch(var(--background-50)); padding: .5rem .65rem; font-size: 12.5px; border-radius: 3px; color: oklch(var(--foreground-950)); }
+.field:focus { outline: none; border-color: oklch(var(--foreground-800)); }
+.log-scroll::-webkit-scrollbar { width: 6px; } .log-scroll::-webkit-scrollbar-thumb { background: oklch(var(--background-400)); }

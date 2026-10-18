@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" fill="none" stroke="#3b2e26" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<defs><filter id="g"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .23  0 0 0 0 .18  0 0 0 0 .15  0 0 0 .55 0"/></filter></defs>
+<rect width="320" height="220" fill="#f6f0e6" stroke="none"/>
+<rect x="28" y="34" width="264" height="152" rx="14" fill="#ecdcc2"/>
+<circle cx="110" cy="112" r="34" fill="#fbf7ef"/><path d="M88 106c12-14 32-14 44 0" stroke="#e8e0cf" stroke-width="12"/>
+<circle cx="190" cy="104" r="30" fill="#fbf7ef"/><circle cx="190" cy="104" r="22" fill="#eba58c"/><rect x="178" y="94" width="9" height="9" rx="1.5" fill="#fbf7ef"/><rect x="192" y="104" width="9" height="9" rx="1.5" fill="#fbf7ef"/><path d="M180 112l6-2M196 92l5 3" stroke="#7fae86" stroke-width="2.5"/>
+<circle cx="70" cy="62" r="16" fill="#fbf7ef"/><path d="M62 58l10 10M70 54l8 12" stroke="#d0694a" stroke-width="3"/>
+<circle cx="250" cy="62" r="16" fill="#fbf7ef"/><path d="M242 58h16M242 64h14" stroke="#7fae86" stroke-width="3"/>
+<circle cx="250" cy="156" r="16" fill="#fbf7ef"/><circle cx="246" cy="152" r="3" fill="#e3b877" stroke="none"/><circle cx="254" cy="158" r="3" fill="#e3b877" stroke="none"/>
+<circle cx="150" cy="166" r="14" fill="#f3c9b8"/>
+<path d="M44 150l60-6M46 158l60-6"/>
+<rect width="320" height="220" filter="url(#g)" opacity=".18" stroke="none"/>
+</svg>

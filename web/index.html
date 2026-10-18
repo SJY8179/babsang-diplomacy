@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>밥상외교 | 모임 식당 추천·조건 조율·지출 기록</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Nanum+Pen+Script&family=Noto+Serif+KR:wght@400;600;700;900&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
+<link rel="stylesheet" href="/static/tw.css">
+<link rel="stylesheet" href="/static/bapsang.css">
+</head>
+<body class="bg-background-50">
+
+<template id="logo">
+  <span class="w-9 h-9 relative inline-flex flex-col items-center justify-end" aria-hidden="true"><span class="absolute top-0 left-1/2 -translate-x-1/2 flex flex-col items-center"><span class="block w-[7px] h-[5px] rounded-tl-[7px] border-t-2 border-l-2 border-foreground-900 rotate-[8deg]"></span><span class="block w-[8px] h-[5px] rounded-br-[7px] border-b-2 border-r-2 border-foreground-900 -rotate-[6deg] -mt-[2px] ml-[2px]"></span></span><span class="relative z-10 flex items-end -mb-[3px]"><span class="w-[6px] h-[6px] rounded-full bg-background-50 border-2 border-foreground-900 -mr-[3px]"></span><span class="w-[10px] h-[9px] rounded-full bg-background-50 border-2 border-foreground-900"></span><span class="w-[6px] h-[6px] rounded-full bg-background-50 border-2 border-foreground-900 -ml-[3px]"></span></span><span class="relative z-10 flex items-center justify-center w-[26px] h-[13px] rounded-b-[14px] border-2 border-foreground-900 bg-background-50"><span class="flex items-center gap-[3px]"><span class="block w-[2px] h-[2px] rounded-full bg-foreground-900"></span><span class="block w-[5px] h-[3px] rounded-b-full border-b-2 border-primary-500"></span><span class="block w-[2px] h-[2px] rounded-full bg-foreground-900"></span></span><span class="absolute left-[2px] bottom-[2px] w-[3px] h-[3px] rounded-full bg-primary-400/70"></span><span class="absolute right-[2px] bottom-[2px] w-[3px] h-[3px] rounded-full bg-primary-400/70"></span></span><span class="block w-[10px] h-[2px] rounded-b-[2px] bg-foreground-900"></span></span>
+</template>
+
+<header id="hdr" class="fixed top-0 inset-x-0 z-50 transition-colors duration-300 bg-transparent">
+  <nav class="flex items-center justify-between gap-4 px-4 md:px-10 h-16">
+    <a href="#top" class="flex items-center gap-2 cursor-pointer whitespace-nowrap shrink-0"><span data-logo></span><span class="flex flex-col justify-center leading-none"><span class="font-heading text-[17px] font-bold tracking-[-0.05em] text-foreground-950">밥상외교</span><span class="font-hand text-[13px] text-primary-600 mt-[3px] leading-none">회식은 맡겨줘</span></span></a>
+    <div class="hidden lg:flex items-center gap-6" id="nav">
+      <a data-nav="top" href="#top">홈</a><a data-nav="participants" href="#participants">조건 입력</a><a data-nav="candidates" href="#candidates">후보 비교</a><a data-nav="log" href="#log">작업 로그</a><a data-nav="memory" href="#memory">모임 기억</a>
+    </div>
+    <div class="flex items-center gap-2.5 shrink-0">
+      <span id="mode" class="hidden md:inline-flex items-center gap-1.5 text-[10.5px] px-2.5 py-1 rounded-full border border-secondary-300 bg-secondary-100 text-secondary-900 whitespace-nowrap"></span>
+      <label class="relative inline-flex items-center gap-2 text-[12.5px] px-3 py-1.5 rounded-full border border-background-400 text-foreground-800 hover:border-foreground-700 cursor-pointer whitespace-nowrap bg-background-50/80">
+        <span class="w-1.5 h-1.5 rounded-full bg-primary-500"></span><select id="dept" class="appearance-none bg-transparent pr-4 cursor-pointer focus:outline-none" aria-label="부서 선택"></select><i class="ri-arrow-down-s-line text-[13px] absolute right-2 pointer-events-none"></i>
+      </label>
+      <button id="new-meeting" type="button" class="hidden md:inline-flex items-center gap-1.5 bg-primary-500 hover:bg-primary-600 text-background-50 transition-colors text-[12.5px] px-3.5 py-2 rounded-[3px] whitespace-nowrap cursor-pointer"><i class="ri-add-line"></i>새 회식 만들기</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section id="top" class="relative overflow-hidden bg-secondary-200 px-3 md:px-8 pt-20 md:pt-24 pb-10 md:pb-14"></section>
+  <section id="departments" class="px-4 md:px-10 py-12 md:py-16 bg-background-100 border-y border-background-200"></section>
+  <section id="participants" class="px-4 md:px-10 py-14 md:py-16 bg-background-50"></section>
+  <section id="conditions" class="px-4 md:px-10 py-14 md:py-16 bg-background-100 border-y border-background-200"></section>
+  <section id="candidates" class="px-4 md:px-10 py-14 md:py-20 bg-background-50"></section>
+  <section id="log" class="px-4 md:px-10 py-12 md:py-14 bg-background-100 border-y border-background-200"></section>
+  <section id="lab" class="hidden px-4 md:px-10 py-12 md:py-14 bg-accent-50 border-b border-accent-200"></section>
+  <section id="memory" class="px-4 md:px-10 py-14 md:py-16 bg-secondary-50 border-t border-secondary-200"></section>
+</main>
+
+<footer class="bg-secondary-200 border-t border-secondary-300 px-4 md:px-10 pt-10 pb-6">
+  <div class="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-8 md:gap-10">
+    <div class="relative">
+      <div class="flex items-center gap-2.5"><span data-logo></span><div class="flex flex-col leading-none"><span class="font-heading text-[19px] font-bold tracking-[-0.05em] text-foreground-950">밥상외교</span><span class="font-hand text-[14px] text-primary-600 mt-1">회식은 맡겨줘</span></div></div>
+      <p class="text-[11.5px] text-foreground-700 mt-4 leading-[1.9] max-w-xs">회식 하루를 통째로 맡기는 막내의 스마트 비서. 조건은 모으고, 예약은 확인하고, 기억은 쌓아둡니다.</p>
+      <span class="hidden md:inline-flex items-center justify-center absolute right-0 top-0 w-[74px] h-[46px] border border-foreground-900/50 rotate-[-6deg] text-[9px] tracking-[0.2em] text-foreground-600 leading-tight text-center px-2">2026<br>가을호</span>
+    </div>
+    <div><p class="text-[9.5px] tracking-[0.22em] text-foreground-500 mb-3">부서</p><ul class="space-y-2" id="f-depts"></ul></div>
+    <div><p class="text-[9.5px] tracking-[0.22em] text-foreground-500 mb-3">서비스</p><ul class="space-y-2 text-[12px] text-foreground-700">
+      <li><a class="hover:text-foreground-950" href="#participants">조건 입력</a></li><li><a class="hover:text-foreground-950" href="#candidates">후보 비교</a></li><li><a class="hover:text-foreground-950" href="#log">작업 로그</a></li></ul></div>
+    <div><p class="text-[9.5px] tracking-[0.22em] text-foreground-500 mb-3">기록</p><ul class="space-y-2 text-[12px] text-foreground-700">
+      <li><a class="hover:text-foreground-950" href="#memory">모임 기억</a></li><li><button type="button" id="dev-toggle" class="hover:text-foreground-950 cursor-pointer">개발자 모드 · 실매장 테스트</button></li><li><a class="hover:text-foreground-950" href="/classic">이전 화면</a></li></ul></div>
+  </div>
+  <div class="mt-8 pt-4 border-t border-secondary-300 flex flex-col sm:flex-row justify-between gap-2 text-[10.5px] text-foreground-600">
+    <p>© 2026 밥상외교 · YUMITHON 출품작</p><p>가게 데이터 · 사장님 확인 · 예약 — Hey Yumi</p>
+  </div>
+</footer>
+
+<dialog id="detail" class="w-[min(720px,calc(100%-32px))] p-0 border border-foreground-900/70 bg-background-50 text-foreground-950"></dialog>
+
+<dialog id="meeting-dlg" class="w-[min(460px,calc(100%-32px))] p-0 border border-foreground-900/70 bg-background-50 text-foreground-950">
+  <form method="dialog" id="meeting-form" class="p-6">
+    <p class="kicker mb-2">NEW — 회식 노트</p>
+    <h3 class="text-[1.35rem]" id="md-title">새 회식 만들기</h3>
+    <div class="grid gap-3 mt-5 text-[11px] text-foreground-600">
+      <label>회식 이름<input class="field mt-1" id="md-name" required maxlength="40" placeholder="예: 10월 정기 회식"></label>
+      <label>날짜·시간<input class="field mt-1" id="md-when" type="datetime-local"></label>
+      <label>지역 (비우면 참석자 출발지 가운데로)<select class="field mt-1" id="md-area"><option value="">자동</option></select></label>
+    </div>
+    <div class="flex justify-end gap-2 mt-6">
+      <button value="cancel" formnovalidate class="text-[12px] px-3 py-2 text-foreground-700 cursor-pointer">닫기</button>
+      <button id="md-save" value="ok" class="bg-primary-500 hover:bg-primary-600 text-background-50 text-[12.5px] px-4 py-2 rounded-[3px] cursor-pointer">저장</button>
+    </div>
+  </form>
+</dialog>
+
+<div id="toast" class="fixed left-1/2 -translate-x-1/2 bottom-5 z-[60] hidden max-w-[90vw] bg-foreground-950 text-background-50 text-[12px] px-4 py-2.5 rounded-[3px] shadow-lg"></div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

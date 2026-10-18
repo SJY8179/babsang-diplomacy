@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" stroke="#3b2e26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<defs><filter id="g"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .23  0 0 0 0 .18  0 0 0 0 .15  0 0 0 .55 0"/></filter></defs>
+<rect width="800" height="500" fill="#f6f0e6" stroke="none"/>
+<rect x="120" y="70" width="560" height="360" rx="26" fill="#ecdcc2"/>
+<path d="M150 120h500M150 380h500" stroke="#d9c39f" stroke-width="1.5"/>
+<!-- 가운데 나눠 먹는 접시 -->
+<ellipse cx="400" cy="250" rx="92" ry="54" fill="#fbf7ef"/>
+<path d="M340 250c18-26 70-30 104-8l22-14v44l-22-14c-34 22-86 18-104-8z" fill="#eba58c"/>
+<circle cx="356" cy="246" r="3" fill="#3b2e26"/>
+<path d="M382 236l8 28M398 234l8 30M414 238l6 22" stroke="#d0694a"/>
+<circle cx="292" cy="196" r="24" fill="#fbf7ef"/><path d="M276 196c6-8 26-8 32 0" stroke="#d0694a" stroke-width="5"/>
+<circle cx="508" cy="196" r="24" fill="#fbf7ef"/><path d="M494 190l12 10M504 186l10 14M512 192l6 10" stroke="#7fae86" stroke-width="3"/>
+<circle cx="292" cy="306" r="24" fill="#fbf7ef"/><circle cx="286" cy="302" r="4" fill="#e3b877" stroke="none"/><circle cx="296" cy="310" r="4" fill="#e3b877" stroke="none"/><circle cx="298" cy="298" r="4" fill="#e3b877" stroke="none"/>
+<circle cx="508" cy="306" r="24" fill="#fbf7ef"/><path d="M494 300h28M494 308h28M494 316h22" stroke="#9dc4a0" stroke-width="3"/>
+<!-- 네 자리 -->
+<g><circle cx="230" cy="110" r="22" fill="#fbf7ef"/><path d="M216 106c8-8 20-8 28 0" stroke="#e8e0cf" stroke-width="10"/><circle cx="276" cy="110" r="18" fill="#cfe3cf"/><path d="M196 92l-2 40M204 92l-2 40"/></g>
+<g><circle cx="570" cy="110" r="22" fill="#fbf7ef"/><path d="M556 106c8-8 20-8 28 0" stroke="#e8e0cf" stroke-width="10"/><circle cx="524" cy="110" r="18" fill="#f3c9b8"/><path d="M604 92l2 40M612 92l2 40"/></g>
+<g><circle cx="230" cy="390" r="22" fill="#fbf7ef"/><path d="M216 386c8-8 20-8 28 0" stroke="#e8e0cf" stroke-width="10"/><circle cx="276" cy="390" r="18" fill="#f3c9b8"/><path d="M196 370l-2 40M204 370l-2 40"/></g>
+<g><circle cx="570" cy="390" r="22" fill="#fbf7ef"/><path d="M556 386c8-8 20-8 28 0" stroke="#e8e0cf" stroke-width="10"/><circle cx="524" cy="390" r="18" fill="#cfe3cf"/><path d="M604 370l2 40M612 370l2 40"/></g>
+<rect width="800" height="500" filter="url(#g)" opacity=".18" stroke="none"/>
+</svg>

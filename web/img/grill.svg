@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" fill="none" stroke="#3b2e26" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<defs><filter id="g"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .23  0 0 0 0 .18  0 0 0 0 .15  0 0 0 .55 0"/></filter></defs>
+<rect width="320" height="220" fill="#f6f0e6" stroke="none"/>
+<circle cx="150" cy="110" r="70" fill="#5a4a40"/><circle cx="150" cy="110" r="62" fill="none" stroke="#8a7668"/>
+<path d="M96 90h108M92 110h116M96 130h108" stroke="#8a7668"/>
+<rect x="110" y="80" width="46" height="18" rx="6" fill="#eba58c" transform="rotate(-12 133 89)"/>
+<rect x="148" y="108" width="50" height="18" rx="6" fill="#d0694a" transform="rotate(8 173 117)"/>
+<rect x="104" y="118" width="40" height="16" rx="6" fill="#f3c9b8" transform="rotate(-4 124 126)"/>
+<path d="M232 48c26-10 54 6 56 30-20 12-48 4-56-30z" fill="#9dc4a0"/><path d="M240 54c14 6 28 16 40 24" stroke="#5f8f66"/>
+<path d="M240 150c24-14 52-2 58 20-18 14-48 8-58-20z" fill="#cfe3cf"/>
+<circle cx="56" cy="60" r="18" fill="#fbf7ef"/><path d="M48 58h16" stroke="#d0694a" stroke-width="4"/>
+<circle cx="56" cy="164" r="18" fill="#fbf7ef"/><circle cx="52" cy="160" r="3" fill="#e3b877" stroke="none"/><circle cx="60" cy="166" r="3" fill="#e3b877" stroke="none"/>
+<rect width="320" height="220" filter="url(#g)" opacity=".18" stroke="none"/>
+</svg>

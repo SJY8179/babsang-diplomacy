@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>밥상외교</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Nanum+Pen+Script&display=swap">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="mark" aria-hidden="true">밥</span>
+    <div>
+      <h1>밥상외교</h1>
+      <span class="sub">회식은 맡겨줘</span>
+    </div>
+  </div>
+  <span id="mode" class="chip"></span>
+</header>
+
+<section class="hero">
+  <p class="kicker">BAPSANG DIPLOMACY — 부서별 회식 운영 노트</p>
+  <h2 class="headline">회식 하루를,<br><em>막내 대신</em> 꼼꼼하게</h2>
+  <p class="hand">* 예산도, 취향도, 지난번 기억도 다 챙겼어요</p>
+  <p class="lead"><b id="h-title">회식</b>, 이 순서로 끝내요. 흩어진 출발지·예산·식단·취향을 모아 정리하고, 지난 회식의 기억까지 반영해 공평한 식당을 찾아 예약까지 챙겨요.</p>
+  <div class="hero-actions">
+    <button class="primary" id="go-plan">추천 후보 보기 →</button>
+    <button class="ghost" id="go-step1">조건 입력하기</button>
+  </div>
+  <div class="hero-stats" id="hero-stats"></div>
+</section>
+
+<section class="depts">
+  <div class="row-between">
+    <h3 class="section-label">부서 선택</h3>
+    <form id="dept-form" class="inline-form">
+      <input id="dept-name" placeholder="새 부서 이름 (예: 인사팀 회식)" maxlength="30">
+      <button class="ghost" type="submit">부서 추가</button>
+    </form>
+  </div>
+  <div id="dept-tabs" class="dept-tabs"></div>
+  <select id="group" class="hidden"></select>
+</section>
+
+
+<main class="layout">
+  <div class="col-main">
+<section class="panel step" id="step1">
+      <p class="step-no">STEP 01 — 명단</p>
+      <div class="row-between"><h2 id="s1-title">참석자별 조건</h2><span class="hand small">링크만 누르면 끝나는 거예요</span></div>
+      <p class="muted" id="s1-sub">공유 링크로 로그인 없이 각자 조건을 입력해요.</p>
+      <div class="meeting-edit grid">
+        <label>회식 이름<input id="m-title"></label>
+        <label>일시<input id="m-when" type="datetime-local"></label>
+        <label>지역<select id="m-area"><option value="">참석자 출발지 기준 자동</option></select></label>
+        <button class="ghost" id="m-save">저장</button>
+      </div>
+      <ol id="people" class="people"></ol>
+      <form id="add-person" class="inline-form">
+        <input id="ap-name" placeholder="이름" maxlength="20">
+        <input id="ap-role" placeholder="직급(선택)" maxlength="10">
+        <button class="ghost" type="submit">참석자 추가</button>
+      </form>
+    </section>
+
+    <section class="panel step hidden" id="step2">
+      <p class="step-no">STEP 02 — 조건 정리</p>
+      <div class="row-between"><h2>필수는 지키고, 선호는 조율해요</h2><span class="hand small">혼자 정하지 않아요</span></div>
+      <div class="cond-grid">
+        <div><h3>필수 조건</h3><ol id="c-must" class="cond"></ol><p class="fine">완화 불가 · 하나라도 지켜지지 않으면 후보에서 제외</p></div>
+        <div><h3>선호 조건</h3><ol id="c-nice" class="cond"></ol><p class="fine">조율 가능 · 만족도를 높이는 조건</p></div>
+        <div><h3>충돌과 완화 제안</h3><ol id="c-conf" class="conf"></ol></div>
+      </div>
+      <div class="row-between">
+        <p class="muted" id="c-count"></p>
+        <button class="ghost" id="replan">조건 다시 정리하기</button>
+      </div>
+    </section>
+
+    <details class="panel quick">
+      <summary>빠른 모드 — 단톡방 대화를 붙여 넣어 바로 찾기</summary>
+    <section id="input-panel">
+      <div class="tabs">
+        <button class="tab on" data-tab="text">단톡방 붙여넣기</button>
+        <button class="tab" data-tab="form">직접 입력</button>
+      </div>
+      <div class="tab-body" data-body="text">
+        <textarea id="chat" rows="5" placeholder="단톡방 대화를 그대로 붙여 넣으세요"></textarea>
+        <button class="link" id="sample">예시: 금요일 회식</button> · <button class="link" id="sample-now">예시: 지금 바로 8명</button>
+      </div>
+      <div class="tab-body hidden" data-body="form">
+        <div class="grid">
+          <label>동네<select id="f-area"></select></label>
+          <label>인원<input id="f-party" type="number" min="1" max="60" value="10"></label>
+          <label>날짜·시간<input id="f-when" type="datetime-local"></label>
+          <label>1인 예산(만 원)<input id="f-price" type="number" min="0" step="0.5" value="3"></label>
+          <label>피할 메뉴<input id="f-avoid" placeholder="예: 매운"></label>
+          <div class="checks">
+            <label><input type="checkbox" id="f-room"> 룸 필수</label>
+            <label><input type="checkbox" id="f-parking"> 주차 되면 좋음</label>
+            <label><input type="checkbox" id="f-biz"> 거래처 식사</label>
+          </div>
+        </div>
+      </div>
+      <button class="primary" id="plan">후보 찾기</button>
+    </section>
+    </details>
+
+    <section id="conditions" class="conditions hidden"></section>
+
+    <section id="cands-panel" class="hidden">
+      <p class="step-no">STEP 03·04 — 후보 비교</p>
+      <div class="row-between">
+        <h2 id="cands-title">추천 식당</h2>
+        <button class="primary" id="ask">사장님께 자리 묻기</button>
+      </div>
+      <p class="fine" id="score-rule"></p>
+      <ol id="cands" class="cards"></ol>
+      <p class="fine">'확인 필요'로 남은 항목은 매장에 직접 확인이 필요해요.</p>
+    </section>
+
+    <section id="approve" class="panel hidden">
+      <h2>예약 요청</h2>
+      <p class="muted" id="approve-target"></p>
+      <div class="grid">
+        <label>연락처<input id="phone" inputmode="tel" placeholder="010-0000-0000"></label>
+      </div>
+      <label class="inline"><input type="checkbox" id="fallback" checked> 거절되면 '가능'이라고 답한 다음 가게로 바로 넘어가기</label>
+      <button class="primary" id="reserve">예약 요청 보내기</button>
+      <p class="fine">연락처는 예약 요청에만 쓰고 저장하지 않아요.</p>
+    </section>
+
+    <section id="confirmed" class="panel hidden">
+      <div class="confirmed-head"><span class="dot"></span><h2 id="confirmed-title"></h2></div>
+      <p class="muted" id="confirmed-meta"></p>
+
+      <h3>단톡방 공지</h3>
+      <textarea id="notice" rows="9" readonly></textarea>
+      <button class="ghost" id="copy">복사</button>
+
+      <div class="day-actions">
+        <div class="mini">
+          <h3>인원이 바뀌었어요</h3>
+          <div class="inline-form">
+            <input id="new-guests" type="number" min="1" max="60">
+            <button class="ghost" id="headcount">다시 확인</button>
+          </div>
+        </div>
+        <div class="mini">
+          <h3>2차</h3>
+          <button class="ghost" id="after">근처에서 지금 앉을 곳 찾기</button>
+        </div>
+      </div>
+      <ol id="after-cands" class="cards small"></ol>
+
+      <h3>다녀와서</h3>
+      <div class="feedback">
+        <div class="stars" id="stars"></div>
+        <label class="inline"><input type="checkbox" id="revisit" checked> 다시 가고 싶어요</label>
+        <label>1인 실제 지출(원)<input id="spent" type="number" step="1000"></label>
+        <button class="ghost" id="save-fb">기록 남기기</button>
+      </div>
+    </section>
+  </div>
+
+  <aside class="col-log" id="log-panel">
+    <button class="log-head" id="log-toggle" aria-expanded="true">에이전트가 한 일 <span class="caret">접기</span></button>
+    <ol id="log" class="log"><li class="muted">조건을 넣고 후보를 찾으면 각 에이전트가 한 일이 시간 순서로 쌓여요.</li></ol>
+  </aside>
+</main>
+
+<section class="memory-panel">
+  <p class="step-no">STEP 05·06 — 모임 기억</p>
+  <div class="row-between"><h2 id="mem-title">이렇게 먹어왔어요</h2><span class="hand small">남긴 기록이 다음 회식을 가볍게 해요</span></div>
+  <div id="memory" class="mem-band"></div>
+  <div id="mem-stats" class="mem-stats"></div>
+  <ol id="mem-visits" class="mem-visits"></ol>
+  <div class="blog">
+    <div class="row-between"><h3>블로그 초안 <span class="muted">DRAFT</span></h3>
+      <div><button class="ghost" id="blog-make">초안 만들기</button> <button class="ghost" id="blog-copy">복사</button></div></div>
+    <textarea id="blog" rows="4" placeholder="가장 최근 방문 기록으로 초안을 만들어요. 기록에 있는 사실만 씁니다."></textarea>
+  </div>
+</section>
+
+<dialog id="detail" class="detail">
+  <div class="detail-head">
+    <div>
+      <h2 id="d-name"></h2>
+      <p class="muted" id="d-meta"></p>
+    </div>
+    <button class="ghost" id="d-close" aria-label="닫기">닫기</button>
+  </div>
+  <p id="d-summary" class="d-summary"></p>
+  <div id="d-photos" class="d-photos"></div>
+  <h3>메뉴판</h3>
+  <ol id="d-menu" class="d-menu"></ol>
+  <h3>위치</h3>
+  <p id="d-addr"></p>
+  <div class="d-links">
+    <a id="d-kakao" class="ghost" target="_blank" rel="noopener">카카오맵</a>
+    <a id="d-naver" class="ghost" target="_blank" rel="noopener">네이버지도</a>
+    <a id="d-yumi" class="ghost" target="_blank" rel="noopener">헤이유미 페이지</a>
+    <button id="d-share" class="primary inline">위치 공유</button>
+  </div>
+  <p class="fine" id="d-source">정보 출처: Hey Yumi. 없는 항목은 비워 두었어요.</p>
+</dialog>
+
+<script src="/static/classic.js"></script>
+</body>
+</html>

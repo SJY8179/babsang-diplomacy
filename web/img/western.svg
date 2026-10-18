@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" fill="none" stroke="#3b2e26" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<defs><filter id="g"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .23  0 0 0 0 .18  0 0 0 0 .15  0 0 0 .55 0"/></filter></defs>
+<rect width="320" height="220" fill="#f6f0e6" stroke="none"/>
+<circle cx="104" cy="96" r="52" fill="#fbf7ef"/><circle cx="104" cy="96" r="36" fill="#f3c9b8"/>
+<path d="M80 92c10-10 20 10 30 0s20 10 30 0M78 104c10-10 20 10 30 0s20 10 30 0" stroke="#d0694a"/>
+<path d="M96 80l4-6 6 4-4 6zM118 110l5-5 5 5-5 5z" fill="#7fae86"/>
+<circle cx="196" cy="150" r="46" fill="#fbf7ef"/><circle cx="196" cy="150" r="31" fill="#f6e2b8"/>
+<path d="M178 140l12 4M196 132l10 8M206 152l12 2M184 160l12-4M198 164l8 6" stroke="#e3b877" stroke-width="5"/>
+<path d="M262 40h28c0 26-6 40-14 40s-14-14-14-40z" fill="#eba58c"/><path d="M262 40c0-10 28-10 28 0"/><path d="M276 80v52M262 134h28"/>
+<path d="M36 170l60 14M42 162l58 14" stroke="#9dc4a0" stroke-width="4"/>
+<rect width="320" height="220" filter="url(#g)" opacity=".18" stroke="none"/>
+</svg>

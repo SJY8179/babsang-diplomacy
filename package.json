@@ -1,0 +1,11 @@
+{
+  "name": "babsang-diplomacy-web",
+  "private": true,
+  "description": "web/tw.css 빌드 전용. 앱 실행에는 Node가 필요 없습니다.",
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.js -i web/tw.input.css -o web/tw.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.16"
+  }
+}
