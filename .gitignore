@@ -1,0 +1,20 @@
+# 비밀값 · 로컬 데이터
+.env
+data/*
+!data/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Node (CSS 빌드용)
+node_modules/
+
+# 기타
+.DS_Store
+.mcp.json
+cloudflared
+*.tgz
