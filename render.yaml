@@ -1,0 +1,30 @@
+# Render Blueprint — 공개 데모 배포용
+# 공개 데모는 실제 사장님께 아무것도 보내지 않도록 PUBLIC_DEMO=1 로 잠급니다.
+services:
+  - type: web
+    name: babsang-diplomacy
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/config
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: PUBLIC_DEMO
+        value: "1"
+      - key: YUMI_MODE
+        value: mock
+      - key: YUMI_ACTIONS
+        value: simulate
+      - key: YUMI_LIVE
+        value: "0"
+      - key: DEMO_SCRIPT
+        value: "1"
+      # 실제 Hey Yumi 검색을 쓰고 싶을 때만 대시보드에서 직접 입력 (저장소에 값이 남지 않음)
+      - key: YUMI_API_KEY
+        sync: false
+      # 배포 후 받은 주소 (예: https://babsang-diplomacy.onrender.com) — 참석자 공유 링크에 쓰임
+      - key: PUBLIC_BASE_URL
+        sync: false

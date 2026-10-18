@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/Hey_Yumi-MCP_·_API-3b2e26?style=flat-square" alt="Hey Yumi">
   <img src="https://img.shields.io/badge/Python-3.11-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/FastAPI-SSE-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI">
-  <a href="../../actions/workflows/ci.yml"><img src="https://img.shields.io/badge/tests-14_passed-5f8f66?style=flat-square" alt="tests"></a>
+  <a href="../../actions/workflows/ci.yml"><img src="https://img.shields.io/badge/tests-21_passed-5f8f66?style=flat-square" alt="tests"></a>
   <img src="https://img.shields.io/badge/YUMITHON-2026-e3b877?style=flat-square" alt="YUMITHON 2026">
 </p>
 
@@ -162,7 +162,19 @@ sequenceDiagram
 - **가게 단위 허용 목록.** `YUMI_LIVE_PLACES`에 적은 가게만 실제로 보내고 나머지는 전부 시뮬레이션합니다. 데모 때는 하이드미플리즈 을지로 한 곳만 열었습니다.
 - **외부 접속 차단.** 공개 주소(터널)로 들어온 요청은 실제 요청이 나갈 수 있는 동작을 할 수 없습니다(403). 서버를 켠 컴퓨터에서만 가능합니다.
 - **연락처 비저장.** 예약 연락처는 메모리에만 두고, 로그에는 `010-****-5678`처럼 가립니다.
+- **공개 배포 잠금.** `PUBLIC_DEMO=1`이면 설정 파일에 무엇을 적어도 실제 요청·실매장 테스트·API 문서가 코드에서 잠기고, 요청 수 제한이 켜집니다.
+- **입력과 메모리 상한.** 입력 길이 제한, 세션·캐시 상한, 보안 헤더, 128비트 참석자 링크 토큰.
 - **지어내지 않기.** 가격·메뉴·자리 같은 가게 사실은 Hey Yumi 응답이나 사장님 답에서만 가져옵니다. 메뉴 가격은 1인 금액이 아니어서 화면에 "메뉴 평균"으로 표시합니다.
+
+알려진 한계(로그인 없음 등)까지 [SECURITY.md](SECURITY.md)에 정리했습니다.
+
+---
+
+## 써 보기
+
+- **공개 데모**: 배포 주소를 여기에 적으세요 → `https://…onrender.com` (실제 요청 없음 · 데모 데이터)
+- **사용 방법**: 총무와 팀원이 하는 일을 순서대로 → [docs/USER_GUIDE.md](docs/USER_GUIDE.md)
+- **배포 방법**: Render 공개 데모 / 내 컴퓨터 + 임시 터널 → [docs/DEPLOY.md](docs/DEPLOY.md)
 
 ---
 
@@ -194,6 +206,7 @@ YUMI_API_KEY=hmp_발급받은_키
 | `YUMI_LIVE` | `0` / `1` | `live`의 두 번째 잠금 |
 | `YUMI_LIVE_PLACES` | placeId 목록 | 실제로 보낼 가게만 |
 | `DEMO_SCRIPT` | `0` / `1` | 시연용 시나리오(1순위 거절 → 2순위 확정) |
+| `PUBLIC_DEMO` | `0` / `1` | 공개 배포 잠금 (실제 요청 · 실매장 테스트 · API 문서 차단, 요청 수 제한) |
 | `ODSAY_API_KEY` | 선택 | 실제 대중교통 소요 시간 (없으면 직선거리 추정으로 표시) |
 | `KAKAO_REST_KEY` | 선택 | 표에 없는 출발지를 좌표로 |
 | `LLM_API_KEY` | 선택 | 후기 초안 문장 다듬기 (없으면 기록 기반 템플릿) |
@@ -201,7 +214,7 @@ YUMI_API_KEY=hmp_발급받은_키
 테스트:
 
 ```bash
-pytest -q        # 14 passed — Hey Yumi를 호출하지 않습니다
+pytest -q        # 21 passed — Hey Yumi를 호출하지 않습니다
 ```
 
 ---
@@ -228,7 +241,9 @@ babsang-diplomacy/
 ├─ web/                  # 빌드 없는 HTML · vanilla JS · Tailwind 빌드 결과(tw.css)
 ├─ scripts/              # 데모 데이터 시드 · Hey Yumi 응답 확인
 ├─ tests/                # 흐름 · 정규화 · 실제 요청 차단 테스트
-└─ docs/                 # 설계 · Hey Yumi 연동 · API · 실매장 테스트 · 발표 자료
+├─ docs/                 # 사용 안내 · 배포 · 설계 · Hey Yumi 연동 · API · 실매장 테스트 · 발표 자료
+├─ render.yaml           # Render 공개 데모 배포 설정
+└─ SECURITY.md           # 보안 대응과 알려진 한계
 ```
 
 ---
@@ -238,7 +253,7 @@ babsang-diplomacy/
 **Backend** Python 3.11 · FastAPI · httpx(async) · pydantic v2 · sse-starlette · SQLite
 **Frontend** HTML · vanilla JS · Tailwind CSS 3(빌드 결과만 포함) · Readdy 시안 기반 디자인
 **연동** Hey Yumi MCP / API · ODsay(선택) · Kakao Local(선택) · Claude API(선택)
-**품질** pytest · GitHub Actions
+**품질 · 배포** pytest · GitHub Actions · Render
 
 ---
 
