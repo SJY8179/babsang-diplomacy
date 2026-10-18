@@ -172,7 +172,7 @@ sequenceDiagram
 
 ## 써 보기
 
-- **공개 데모**: 배포 주소를 여기에 적으세요 → `https://…onrender.com` (실제 요청 없음 · 데모 데이터)
+- **공개 데모**: 
 - **사용 방법**: 총무와 팀원이 하는 일을 순서대로 → [docs/USER_GUIDE.md](docs/USER_GUIDE.md)
 - **배포 방법**: Render 공개 데모 / 내 컴퓨터 + 임시 터널 → [docs/DEPLOY.md](docs/DEPLOY.md)
 
