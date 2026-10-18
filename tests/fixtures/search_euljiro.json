@@ -1,0 +1,2491 @@
+{
+ "resolvedAs": "을지로입구역 주변",
+ "locationNote": "Searched the \"을지로입구역 주변\" area. In one short, friendly line say which area you looked in — use the plain name \"을지로입구역 주변\", NEVER admin jargon (읍/면/행정동/법정동 or codes). The same neighborhood name can exist in other regions, so if \"을지로입구역\" could be elsewhere, add a brief invite in the user's language like \"다른 지역의 을지로입구역을 찾으신 거면 도시 이름과 함께 알려주세요\" (skip the invite only for unmistakable landmarks). Do NOT withhold the results while saying this.",
+ "success": true,
+ "data": [
+  {
+   "id": "1606280979",
+   "name": "도담1988",
+   "category": "restaurant",
+   "categoryLabel": "한식",
+   "location": {
+    "lat": 37.574361,
+    "lng": 126.9853639
+   },
+   "address": {
+    "road": "서울특별시 종로구 인사동10길 11-5 1층",
+    "jibun": "서울특별시 종로구 관훈동 30-16 1층"
+   },
+   "regionCode": "1111012800",
+   "confidence": 0.98,
+   "sourceCount": 3,
+   "possiblyClosed": false,
+   "lastSeenAt": "2026-10-14T13:49:21.238Z",
+   "placeUrl": "https://heyyumi.ai/places/1606280979",
+   "phone": null,
+   "homepage": "https://dodamlog.tistory.com",
+   "bookingUrl": null,
+   "yumiReservable": true,
+   "reservationChannels": [
+    "yumi"
+   ],
+   "snsLinks": [
+    "https://www.instagram.com/bukchondodam"
+   ],
+   "businessHours": [
+    {
+     "day": "mon",
+     "open": "11:00",
+     "close": "21:30",
+     "breaks": [
+      {
+       "end": "17:00",
+       "start": "15:00"
+      }
+     ],
+     "closed": false,
+     "lastOrder": "20:50",
+     "lastOrders": [
+      {
+       "time": "20:50",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": false,
+     "segments": [
+      {
+       "open": "11:00",
+       "close": "15:00",
+       "lastOrder": null
+      },
+      {
+       "open": "17:00",
+       "close": "21:30",
+       "lastOrder": "20:50"
+      }
+     ]
+    },
+    {
+     "day": "tue",
+     "open": "11:00",
+     "close": "21:30",
+     "breaks": [
+      {
+       "end": "17:00",
+       "start": "15:00"
+      }
+     ],
+     "closed": false,
+     "lastOrder": "20:50",
+     "lastOrders": [
+      {
+       "time": "20:50",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": false,
+     "segments": [
+      {
+       "open": "11:00",
+       "close": "15:00",
+       "lastOrder": null
+      },
+      {
+       "open": "17:00",
+       "close": "21:30",
+       "lastOrder": "20:50"
+      }
+     ]
+    },
+    {
+     "day": "wed",
+     "open": "11:00",
+     "close": "21:30",
+     "breaks": [
+      {
+       "end": "17:00",
+       "start": "15:00"
+      }
+     ],
+     "closed": false,
+     "lastOrder": "20:50",
+     "lastOrders": [
+      {
+       "time": "20:50",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": false,
+     "segments": [
+      {
+       "open": "11:00",
+       "close": "15:00",
+       "lastOrder": null
+      },
+      {
+       "open": "17:00",
+       "close": "21:30",
+       "lastOrder": "20:50"
+      }
+     ]
+    },
+    {
+     "day": "thu",
+     "open": "11:00",
+     "close": "21:30",
+     "breaks": [
+      {
+       "end": "17:00",
+       "start": "15:00"
+      }
+     ],
+     "closed": false,
+     "lastOrder": "20:50",
+     "lastOrders": [
+      {
+       "time": "20:50",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": false,
+     "segments": [
+      {
+       "open": "11:00",
+       "close": "15:00",
+       "lastOrder": null
+      },
+      {
+       "open": "17:00",
+       "close": "21:30",
+       "lastOrder": "20:50"
+      }
+     ]
+    },
+    {
+     "day": "fri",
+     "open": "11:00",
+     "close": "21:30",
+     "breaks": [
+      {
+       "end": "17:00",
+       "start": "15:00"
+      }
+     ],
+     "closed": false,
+     "lastOrder": "20:50",
+     "lastOrders": [
+      {
+       "time": "20:50",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": false,
+     "segments": [
+      {
+       "open": "11:00",
+       "close": "15:00",
+       "lastOrder": null
+      },
+      {
+       "open": "17:00",
+       "close": "21:30",
+       "lastOrder": "20:50"
+      }
+     ]
+    },
+    {
+     "day": "sat",
+     "open": "11:00",
+     "close": "21:30",
+     "breaks": [
+      {
+       "end": "17:00",
+       "start": "15:00"
+      }
+     ],
+     "closed": false,
+     "lastOrder": "20:50",
+     "lastOrders": [
+      {
+       "time": "20:50",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": false,
+     "segments": [
+      {
+       "open": "11:00",
+       "close": "15:00",
+       "lastOrder": null
+      },
+      {
+       "open": "17:00",
+       "close": "21:30",
+       "lastOrder": "20:50"
+      }
+     ]
+    },
+    {
+     "day": "sun",
+     "open": "11:00",
+     "close": "21:30",
+     "breaks": [
+      {
+       "end": "17:00",
+       "start": "15:00"
+      }
+     ],
+     "closed": false,
+     "lastOrder": "20:50",
+     "lastOrders": [
+      {
+       "time": "20:50",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": false,
+     "segments": [
+      {
+       "open": "11:00",
+       "close": "15:00",
+       "lastOrder": null
+      },
+      {
+       "open": "17:00",
+       "close": "21:30",
+       "lastOrder": "20:50"
+      }
+     ]
+    }
+   ],
+   "temporaryClosures": null,
+   "is24h": false,
+   "rating": null,
+   "reviewCount": 1299,
+   "latestReviewDate": "2026-10-06T00:00:00.000Z",
+   "freshnessScore": 1,
+   "dataQuality": {
+    "recency": 1,
+    "veracity": 5,
+    "confidence": 0.98,
+    "completeness": 1,
+    "last_verified_days_ago": 0
+   },
+   "price": {
+    "level": 3,
+    "avg": 23750,
+    "min": 11000,
+    "max": 35000
+   },
+   "menuSummary": {
+    "count": 16,
+    "items": [
+     "도담냉면정식",
+     "도담비빔냉면(계절한정)",
+     "도담냉면(계절한정)",
+     "뭇국정식",
+     "김치찜정식",
+     "도담육전",
+     "제육볶음",
+     "청량리어묵탕"
+    ]
+   },
+   "openNow": {
+    "open": true,
+    "reason": "open"
+   },
+   "closureSignal": null,
+   "promotion": null,
+   "photoCount": 0,
+   "nearestStation": {
+    "station": "안국",
+    "walkMin": 4
+   },
+   "accessHints": {
+    "subway": [
+     {
+      "lines": [
+       "3호선"
+      ],
+      "station": "안국",
+      "walkMin": 4,
+      "distanceM": 238
+     },
+     {
+      "lines": [
+       "1호선",
+       "3호선",
+       "5호선"
+      ],
+      "station": "종로3가",
+      "walkMin": 7,
+      "distanceM": 496
+     },
+     {
+      "lines": [
+       "1호선"
+      ],
+      "station": "종로5가",
+      "walkMin": 9,
+      "distanceM": 616
+     }
+    ]
+   },
+   "recommendedFor": [
+    "date",
+    "family",
+    "group_dining",
+    "business_meeting",
+    "solo_dining"
+   ],
+   "atmosphere": [
+    "trendy",
+    "clean"
+   ],
+   "menu": [
+    {
+     "name": "도담냉면정식",
+     "price": "35,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "도담비빔냉면(계절한정)",
+     "price": "11,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "도담냉면(계절한정)",
+     "price": "11,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "뭇국정식",
+     "price": "35,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "김치찜정식",
+     "price": "35,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "도담육전",
+     "price": "20,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "제육볶음",
+     "price": "24,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "청량리어묵탕",
+     "price": "24,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "감자전",
+     "price": "15,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "백골뱅이소면",
+     "price": "25,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "모듬전",
+     "price": "35,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "바지락술국",
+     "price": "25,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "낙지볶음",
+     "price": "27,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "도담김치찜",
+     "price": "24,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "통낙지대파전",
+     "price": "23,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "소고기무국(1인가능)",
+     "price": "11,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    }
+   ],
+   "serviceAttributes": {
+    "wifi": true,
+    "serves": [
+     "alcohol"
+    ],
+    "dine_in": true,
+    "parking": false,
+    "takeout": true,
+    "delivery": true,
+    "reservable": true,
+    "parking_note": "주차 불가",
+    "parking_type": "none",
+    "venue_subtype": "korean",
+    "group_friendly": true,
+    "payment_methods": [
+     "zero_pay"
+    ],
+    "waiting_expected": true,
+    "wheelchair_accessible": true,
+    "restroom_gender_separated": true
+   },
+   "atmosphereScores": {
+    "date": 9.5,
+    "solo": 6,
+    "clean": 6.7,
+    "group": 9.5,
+    "family": 9.5,
+    "trendy": 8.2,
+    "business": 6
+   },
+   "aiSummary": "안국역 근처 트렌디한 프리미엄 한식. 데이트·가족 식사에 적합. 도담냉면정식 추천.",
+   "ownerIntro": null,
+   "influencerFeatures": null,
+   "legacy": null,
+   "culturalAssociations": null,
+   "reputation": {
+    "cross_source_confirmed": true,
+    "sample_size": "rich",
+    "recently_active": true,
+    "last_verified_days_ago": 0,
+    "regulars_favorite": false,
+    "concerns": [],
+    "basis": [
+     "3개 지도 소스에서 같은 곳으로 확인됐어요",
+     "리뷰 표본이 많아요(1299건 기반)",
+     "최근까지 리뷰 활동이 이어지고 있어요"
+    ],
+    "caveats": []
+   },
+   "distanceM": 954,
+   "yumiReservation": "유미 파트너 매장 — 원하시면 이 채팅에서 바로 예약 요청을 보낼 수 있어요(사장님 승인 후 확정)."
+  },
+  {
+   "id": "1202352215",
+   "name": "모스",
+   "category": "bar",
+   "categoryLabel": "요리주점",
+   "location": {
+    "lat": 37.5653395,
+    "lng": 126.9900805
+   },
+   "address": {
+    "road": "서울특별시 중구 수표로 46-2 2층",
+    "jibun": "서울특별시 중구 저동2가 3-1 2층"
+   },
+   "regionCode": "1114016100",
+   "confidence": 0.98,
+   "sourceCount": 3,
+   "possiblyClosed": false,
+   "lastSeenAt": "2026-10-13T08:59:51.314Z",
+   "placeUrl": "https://heyyumi.ai/places/1202352215",
+   "phone": null,
+   "homepage": "https://www.instagram.com/bar_moss_",
+   "bookingUrl": null,
+   "yumiReservable": true,
+   "reservationChannels": [
+    "yumi"
+   ],
+   "snsLinks": [
+    "https://www.instagram.com/bar_moss_"
+   ],
+   "businessHours": [
+    {
+     "day": "mon",
+     "open": "18:00",
+     "close": "01:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": null,
+     "endsNextDay": false
+    },
+    {
+     "day": "tue",
+     "open": "18:00",
+     "close": "01:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": null,
+     "endsNextDay": true
+    },
+    {
+     "day": "wed",
+     "open": "18:00",
+     "close": "01:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": null,
+     "endsNextDay": true
+    },
+    {
+     "day": "thu",
+     "open": "18:00",
+     "close": "01:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": null,
+     "endsNextDay": true
+    },
+    {
+     "day": "fri",
+     "open": "18:00",
+     "close": "02:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": null,
+     "endsNextDay": true
+    },
+    {
+     "day": "sat",
+     "open": "18:00",
+     "close": "02:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": null,
+     "endsNextDay": true
+    },
+    {
+     "day": "sun",
+     "open": null,
+     "close": null,
+     "breaks": [],
+     "closed": true,
+     "lastOrder": null,
+     "endsNextDay": false
+    }
+   ],
+   "temporaryClosures": null,
+   "is24h": false,
+   "rating": null,
+   "reviewCount": 651,
+   "latestReviewDate": "2026-10-01T00:00:00.000Z",
+   "freshnessScore": 1,
+   "dataQuality": {
+    "recency": 1,
+    "veracity": 5,
+    "confidence": 0.98,
+    "completeness": 1,
+    "last_verified_days_ago": 0
+   },
+   "price": {
+    "level": 2,
+    "avg": 17308,
+    "min": 6000,
+    "max": 34000
+   },
+   "menuSummary": {
+    "count": 20,
+    "items": [
+     "막걸리",
+     "약주, 청주, 과하주 등",
+     "전통주",
+     "전통주",
+     "브랜디(꼬냑)",
+     "브랜디(코냑)",
+     "한정판 주류",
+     "가브리살 수육 & 루꼴라 겉절이"
+    ]
+   },
+   "openNow": {
+    "open": false,
+    "reason": "before_open"
+   },
+   "closureSignal": null,
+   "promotion": {
+    "text": "네이버 참기름 꿀감자튀김 쿠폰받기 상시 진행중입니다",
+    "endsOn": null,
+    "startsOn": null,
+    "updatedAt": "2026-08-13T03:49:16.927Z"
+   },
+   "photoCount": 8,
+   "nearestStation": {
+    "station": "을지로3가",
+    "walkMin": 2
+   },
+   "accessHints": {
+    "subway": [
+     {
+      "lines": [
+       "2호선",
+       "3호선"
+      ],
+      "station": "을지로3가",
+      "walkMin": 2,
+      "distanceM": 140
+     },
+     {
+      "lines": [
+       "4호선"
+      ],
+      "station": "명동",
+      "walkMin": 9,
+      "distanceM": 587
+     },
+     {
+      "lines": [
+       "3호선",
+       "4호선"
+      ],
+      "station": "충무로",
+      "walkMin": 9,
+      "distanceM": 631
+     }
+    ]
+   },
+   "recommendedFor": [
+    "group_dining",
+    "date",
+    "group_drinking",
+    "late_night",
+    "late_night_eatery"
+   ],
+   "atmosphere": [
+    "traditional",
+    "quiet",
+    "trendy"
+   ],
+   "menu": [
+    {
+     "name": "막걸리",
+     "price": null,
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "약주, 청주, 과하주 등",
+     "price": null,
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "전통주",
+     "price": null,
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "전통주",
+     "price": null,
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "브랜디(꼬냑)",
+     "price": null,
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "브랜디(코냑)",
+     "price": null,
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "한정판 주류",
+     "price": null,
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "가브리살 수육 & 루꼴라 겉절이",
+     "price": "34,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "제철회 세비체",
+     "price": "26,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "연어사시미 & 야채무침",
+     "price": "26,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "고추장버터 해물볶음",
+     "price": "25,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "제철나물 파스타",
+     "price": "18,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "된장 라구파스타",
+     "price": "18,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "브로콜리니 & 스모크된장마요",
+     "price": "15,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "연어 & 칩스",
+     "price": "18,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "포타벨라 버섯",
+     "price": "11,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "참기름 꿀 감자튀김",
+     "price": "9,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "들기름 아이스크림",
+     "price": "6,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "인절미 티라미슈",
+     "price": "9,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "올리브 겉절이",
+     "price": "10,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    }
+   ],
+   "serviceAttributes": {
+    "wifi": true,
+    "serves": [
+     "alcohol"
+    ],
+    "dietary": {
+     "vegan_options": true,
+     "owner_declared": true
+    },
+    "dine_in": true,
+    "parking": false,
+    "takeout": true,
+    "delivery": true,
+    "promotion": {
+     "text": "네이버 참기름 꿀감자튀김 쿠폰받기 상시 진행중입니다",
+     "endsOn": null,
+     "startsOn": null,
+     "updatedAt": "2026-08-13T03:49:16.927Z"
+    },
+    "reservable": true,
+    "parking_fee": "paid",
+    "no_kids_zone": true,
+    "parking_note": "자체 주차장은 없지만 인근 주차장(공영 등)을 이용할 수 있어요",
+    "parking_type": "nearby",
+    "has_promotion": true,
+    "venue_subtype": "korean_pub",
+    "group_friendly": true,
+    "payment_methods": [
+     "card",
+     "kakao_pay",
+     "zero_pay"
+    ],
+    "restroom_gender_separated": true
+   },
+   "atmosphereScores": {
+    "date": 9,
+    "group": 9.5,
+    "quiet": 8.5,
+    "trendy": 6.7,
+    "late_night": 6,
+    "traditional": 9.5,
+    "late_night_eatery": 6
+   },
+   "aiSummary": "을지로3가역 근처 전통 있는 적당한 가격대 요리주점. 모임·회식·데이트에 적합. 막걸리 추천.",
+   "ownerIntro": null,
+   "influencerFeatures": null,
+   "legacy": null,
+   "culturalAssociations": null,
+   "reputation": {
+    "cross_source_confirmed": true,
+    "sample_size": "rich",
+    "recently_active": true,
+    "last_verified_days_ago": 0,
+    "regulars_favorite": false,
+    "concerns": [],
+    "basis": [
+     "3개 지도 소스에서 같은 곳으로 확인됐어요",
+     "리뷰 표본이 많아요(651건 기반)",
+     "최근까지 리뷰 활동이 이어지고 있어요"
+    ],
+    "caveats": []
+   },
+   "distanceM": 637,
+   "yumiReservation": "유미 파트너 매장 — 원하시면 이 채팅에서 바로 예약 요청을 보낼 수 있어요(사장님 승인 후 확정)."
+  },
+  {
+   "id": "1704043572",
+   "name": "우대포 블랙명동점",
+   "category": "restaurant",
+   "categoryLabel": "육류,고기요리",
+   "location": {
+    "lat": 37.564299,
+    "lng": 126.9844936
+   },
+   "address": {
+    "road": "서울특별시 중구 명동7길 12 1~4층",
+    "jibun": "서울특별시 중구 명동1가 47-1 1~4층"
+   },
+   "regionCode": "1114012600",
+   "confidence": 0.93,
+   "sourceCount": 2,
+   "possiblyClosed": false,
+   "lastSeenAt": "2026-10-13T10:05:18.974Z",
+   "placeUrl": "https://heyyumi.ai/places/1704043572",
+   "phone": null,
+   "homepage": "https://woodaepo.com",
+   "bookingUrl": null,
+   "yumiReservable": true,
+   "reservationChannels": [
+    "yumi"
+   ],
+   "snsLinks": null,
+   "businessHours": [
+    {
+     "day": "mon",
+     "open": "11:00",
+     "close": "24:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "23:00",
+     "lastOrders": [
+      {
+       "time": "23:00",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": false
+    },
+    {
+     "day": "tue",
+     "open": "11:00",
+     "close": "24:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "23:00",
+     "lastOrders": [
+      {
+       "time": "23:00",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": false
+    },
+    {
+     "day": "wed",
+     "open": "11:00",
+     "close": "24:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "23:00",
+     "lastOrders": [
+      {
+       "time": "23:00",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": false
+    },
+    {
+     "day": "thu",
+     "open": "11:00",
+     "close": "24:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "23:00",
+     "lastOrders": [
+      {
+       "time": "23:00",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": false
+    },
+    {
+     "day": "fri",
+     "open": "11:00",
+     "close": "24:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "23:00",
+     "lastOrders": [
+      {
+       "time": "23:00",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": false
+    },
+    {
+     "day": "sat",
+     "open": "11:00",
+     "close": "24:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "23:00",
+     "lastOrders": [
+      {
+       "time": "23:00",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": false
+    },
+    {
+     "day": "sun",
+     "open": "11:00",
+     "close": "24:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "23:00",
+     "lastOrders": [
+      {
+       "time": "23:00",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": false
+    }
+   ],
+   "temporaryClosures": null,
+   "is24h": false,
+   "rating": null,
+   "reviewCount": 1006,
+   "latestReviewDate": "2026-09-26T00:00:00.000Z",
+   "freshnessScore": 0.99,
+   "dataQuality": {
+    "recency": 1,
+    "veracity": 5,
+    "confidence": 0.93,
+    "completeness": 1,
+    "last_verified_days_ago": 0
+   },
+   "price": {
+    "level": 4,
+    "avg": 119000,
+    "min": 13000,
+    "max": 675000
+   },
+   "menuSummary": {
+    "count": 24,
+    "items": [
+     "블랙홀 깍둑구이",
+     "젠가 블랙탑",
+     "우대갈비 A세트",
+     "우대갈비 B세트",
+     "PREMIUM KOREAN BBQ A",
+     "PREMIUM KOREAN BBQ B",
+     "양념 소갈비살",
+     "양념 왕갈비"
+    ]
+   },
+   "openNow": {
+    "open": true,
+    "reason": "open"
+   },
+   "closureSignal": null,
+   "promotion": null,
+   "photoCount": 8,
+   "nearestStation": {
+    "station": "을지로입구",
+    "walkMin": 4
+   },
+   "accessHints": {
+    "subway": [
+     {
+      "lines": [
+       "2호선"
+      ],
+      "station": "을지로입구",
+      "walkMin": 4,
+      "distanceM": 236
+     },
+     {
+      "lines": [
+       "4호선"
+      ],
+      "station": "명동",
+      "walkMin": 6,
+      "distanceM": 401
+     },
+     {
+      "lines": [
+       "1호선"
+      ],
+      "station": "종각",
+      "walkMin": 9,
+      "distanceM": 611
+     }
+    ]
+   },
+   "recommendedFor": [
+    "business_meeting",
+    "family",
+    "group_dining",
+    "date",
+    "formal_gathering",
+    "late_night"
+   ],
+   "atmosphere": null,
+   "menu": [
+    {
+     "name": "블랙홀 깍둑구이",
+     "price": "62,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "젠가 블랙탑",
+     "price": "180,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "우대갈비 A세트",
+     "price": "348,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "우대갈비 B세트",
+     "price": "165,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "PREMIUM KOREAN BBQ A",
+     "price": "675,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "PREMIUM KOREAN BBQ B",
+     "price": "355,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "양념 소갈비살",
+     "price": "56,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "양념 왕갈비",
+     "price": "70,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "한우 육회",
+     "price": "35,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "한우 안심",
+     "price": "71,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "한우새우살",
+     "price": "71,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "특생왕갈비",
+     "price": "110,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "한우채끝양념구이",
+     "price": "39,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "돌솥비빔밥+된장찌개",
+     "price": "14,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "함흥냉면 (물/비빔)",
+     "price": "13,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "제주 목살",
+     "price": "56,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "제주 오겹살",
+     "price": "56,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "한우 등심 주물럭",
+     "price": "55,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "한우 등심",
+     "price": "62,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "한우 살치살",
+     "price": "71,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "한우 우설",
+     "price": "53,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "한우 살치살",
+     "price": "71,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "한우 새우살",
+     "price": "71,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "한우 채끝슬라이스",
+     "price": "97,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    }
+   ],
+   "serviceAttributes": {
+    "dine_in": true,
+    "parking": true,
+    "takeout": true,
+    "bbq_meat": [
+     "pork",
+     "beef"
+    ],
+    "delivery": true,
+    "high_chair": true,
+    "reservable": true,
+    "corkage_free": true,
+    "parking_note": "매장 주차 가능",
+    "parking_type": "onsite",
+    "pet_friendly": true,
+    "private_room": true,
+    "kids_friendly": true,
+    "venue_subtype": "korean_bbq",
+    "group_friendly": true,
+    "kids_play_area": true,
+    "outdoor_seating": true,
+    "bbq_meat_primary": [
+     "beef"
+    ],
+    "corkage_available": true,
+    "restroom_gender_separated": true
+   },
+   "atmosphereScores": {
+    "date": 6,
+    "group": 9.5,
+    "family": 9.5,
+    "business": 9.5,
+    "late_night": 6
+   },
+   "aiSummary": "을지로입구역 근처 프리미엄 육류,고기요리. 비즈니스 미팅·가족 식사에 적합. 블랙홀 깍둑구이 추천.",
+   "ownerIntro": "우대포 블랙명동점은 서울특별시 중구에 위치한 고기 요리 전문점으로 다양한 육류 메뉴를 제공합니다. 대표 메뉴인 블랙홀 깍둑구이와 우대갈비 A세트는 많은 손님들에게 사랑받고 있으며, 반려동물과 함께할 수 있는 야외석과 단체 손님을 위한 룸도 마련되어 있습니다. 예약과 포장, 배달 서비스가 가능해 편리하게 이용할 수 있습니다.",
+   "influencerFeatures": null,
+   "legacy": null,
+   "culturalAssociations": null,
+   "reputation": {
+    "cross_source_confirmed": true,
+    "sample_size": "rich",
+    "recently_active": true,
+    "last_verified_days_ago": 0,
+    "regulars_favorite": false,
+    "concerns": [],
+    "basis": [
+     "2개 지도 소스에서 같은 곳으로 확인됐어요",
+     "리뷰 표본이 많아요(1006건 기반)",
+     "최근까지 리뷰 활동이 이어지고 있어요"
+    ],
+    "caveats": []
+   },
+   "distanceM": 236,
+   "yumiReservation": "유미 파트너 매장 — 원하시면 이 채팅에서 바로 예약 요청을 보낼 수 있어요(사장님 승인 후 확정)."
+  },
+  {
+   "id": "1981818134",
+   "name": "비비큐치킨 명동스타점",
+   "category": "restaurant",
+   "categoryLabel": "치킨,닭강정",
+   "location": {
+    "lat": 37.5634591,
+    "lng": 126.9834763
+   },
+   "address": {
+    "road": "서울특별시 중구 명동4길 2 2층",
+    "jibun": "서울특별시 중구 명동2가 55-5 2층"
+   },
+   "regionCode": "1114012700",
+   "confidence": 0.9,
+   "sourceCount": 2,
+   "possiblyClosed": false,
+   "lastSeenAt": "2026-10-13T10:02:46.356Z",
+   "placeUrl": "https://heyyumi.ai/places/1981818134",
+   "phone": null,
+   "homepage": null,
+   "bookingUrl": null,
+   "yumiReservable": true,
+   "reservationChannels": [
+    "yumi"
+   ],
+   "snsLinks": null,
+   "businessHours": [
+    {
+     "day": "mon",
+     "open": "10:00",
+     "close": "01:30",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "01:00",
+     "lastOrders": [
+      {
+       "time": "01:00",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": true
+    },
+    {
+     "day": "tue",
+     "open": "10:00",
+     "close": "01:30",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "01:00",
+     "lastOrders": [
+      {
+       "time": "01:00",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": true
+    },
+    {
+     "day": "wed",
+     "open": "10:00",
+     "close": "01:30",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "01:00",
+     "lastOrders": [
+      {
+       "time": "01:00",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": true
+    },
+    {
+     "day": "thu",
+     "open": "10:00",
+     "close": "01:30",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "01:00",
+     "lastOrders": [
+      {
+       "time": "01:00",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": true
+    },
+    {
+     "day": "fri",
+     "open": "10:00",
+     "close": "01:30",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "01:00",
+     "lastOrders": [
+      {
+       "time": "01:00",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": true
+    },
+    {
+     "day": "sat",
+     "open": "10:00",
+     "close": "01:30",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "01:00",
+     "lastOrders": [
+      {
+       "time": "01:00",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": true
+    },
+    {
+     "day": "sun",
+     "open": "10:00",
+     "close": "01:30",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "01:00",
+     "lastOrders": [
+      {
+       "time": "01:00",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": true
+    }
+   ],
+   "temporaryClosures": null,
+   "is24h": false,
+   "rating": null,
+   "reviewCount": 404,
+   "latestReviewDate": "2026-09-02T00:00:00.000Z",
+   "freshnessScore": 0.95,
+   "dataQuality": {
+    "recency": 1,
+    "veracity": 5,
+    "confidence": 0.9,
+    "completeness": 0.9,
+    "last_verified_days_ago": 0
+   },
+   "price": {
+    "level": 1,
+    "avg": 17110,
+    "min": 3000,
+    "max": 65000
+   },
+   "menuSummary": {
+    "count": 83,
+    "items": [
+     "황금올리브치킨",
+     "황금크런치너겟(크래커)",
+     "핫황금올리브 크리스피",
+     "황금올리브닭다리치킨",
+     "황금올리브핫윙",
+     "황금올리브콤보",
+     "BBQ양념치킨",
+     "소이갈릭스치킨"
+    ]
+   },
+   "openNow": {
+    "open": true,
+    "reason": "open"
+   },
+   "closureSignal": null,
+   "promotion": null,
+   "photoCount": 0,
+   "nearestStation": {
+    "station": "을지로입구",
+    "walkMin": 4
+   },
+   "accessHints": {
+    "subway": [
+     {
+      "lines": [
+       "2호선"
+      ],
+      "station": "을지로입구",
+      "walkMin": 4,
+      "distanceM": 288
+     },
+     {
+      "lines": [
+       "4호선"
+      ],
+      "station": "명동",
+      "walkMin": 6,
+      "distanceM": 371
+     },
+     {
+      "lines": [
+       "1호선",
+       "2호선"
+      ],
+      "station": "시청",
+      "walkMin": 9,
+      "distanceM": 579
+     }
+    ]
+   },
+   "recommendedFor": [
+    "group_dining",
+    "late_night"
+   ],
+   "atmosphere": null,
+   "menu": [
+    {
+     "name": "황금올리브치킨",
+     "price": "25,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "황금크런치너겟(크래커)",
+     "price": "25,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "핫황금올리브 크리스피",
+     "price": "26,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "황금올리브닭다리치킨",
+     "price": "28,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "황금올리브핫윙",
+     "price": "29,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "황금올리브콤보",
+     "price": "29,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "BBQ양념치킨",
+     "price": "26,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "소이갈릭스치킨",
+     "price": "27,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "치즈치킨",
+     "price": "27,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "핫황금올리브 레드착착",
+     "price": "26,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "핫황금올리브 블랙페퍼",
+     "price": "26,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "크런치버터치킨",
+     "price": "27,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "황금반/블렉페퍼반",
+     "price": "27,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "자메이카통다리구이",
+     "price": "26,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "자메이카소떡만나치킨",
+     "price": "28,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "극한왕갈비치킨",
+     "price": "27,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "황금+양념",
+     "price": "27,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "황금+크런치버터",
+     "price": "29,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "황금+소이",
+     "price": "29,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "소이+크런치버터",
+     "price": "29,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "양념+소이",
+     "price": "29,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "땡쇼크",
+     "price": "28,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "황금반/레드척척",
+     "price": "27,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "크런치버터치킨",
+     "price": "27,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "A set",
+     "price": "42,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "B set",
+     "price": "43,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "C 세트",
+     "price": "65,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "D 세트",
+     "price": "43,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "허니리코타 시카고피자",
+     "price": "26,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "페퍼로니시카고피자",
+     "price": "27,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "황금알치즈볼(5개)",
+     "price": "8,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "더블치즈볼(5개)",
+     "price": "8,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "크림치즈볼",
+     "price": "8,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "오감볼",
+     "price": "9,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "BBQ소떡",
+     "price": "7,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "BBQ감자튀김",
+     "price": "8,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "모듬감자튀김",
+     "price": "13,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "롱치즈스틱(2개)",
+     "price": "9,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "국물떡볶이",
+     "price": "12,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "타르타르새우튀김(10개)",
+     "price": "24,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "바다에서건진오뎅탕",
+     "price": "23,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "반반먹태",
+     "price": "23,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "버터먹태",
+     "price": "22,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "양념먹태",
+     "price": "22,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "산토리하이볼",
+     "price": "9,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "짐빔하이볼",
+     "price": "9,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "레몬하이볼",
+     "price": "9,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "복분자하이볼",
+     "price": "10,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "막걸리하이볼",
+     "price": "8,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "얼그레이하이볼",
+     "price": "9,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "피치하이볼",
+     "price": "9,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "무알콜얼그레이하이볼",
+     "price": "9,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "잔막걸리 2잔",
+     "price": "4,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "수박쥬스",
+     "price": "8,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "레몬에이드",
+     "price": "6,500원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "자몽에이드",
+     "price": "6,500원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "청포도에이드",
+     "price": "6,500원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "유자에이드",
+     "price": "6,500원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "블루베리에이드",
+     "price": "6,500원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "레몬스파클링소다",
+     "price": "6,500원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "페리에라임",
+     "price": "6,500원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "유자차(hot)",
+     "price": "6,500원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "밀키스",
+     "price": "5,500원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "식혜",
+     "price": "6,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "멘보샤 (5개)",
+     "price": "8,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "공기밥",
+     "price": "3,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "크림 생맥주 1잔",
+     "price": "6,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "크림 생맥주 1700cc",
+     "price": "23,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "크림 생맥주 2700cc",
+     "price": "31,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "소주",
+     "price": "6,500원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "카스",
+     "price": "6,500원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "테라",
+     "price": "6,500원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "칭타오",
+     "price": "6,500원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "아사히",
+     "price": "9,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "청포도소주",
+     "price": "7,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "자몽소주",
+     "price": "7,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "다래소주",
+     "price": "7,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "콜라/사이다",
+     "price": "3,000원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "콜라 1.25L",
+     "price": "6,500원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "오렌지쥬스",
+     "price": "6,500원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "밀크티",
+     "price": "6,500원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "우롱차/옥수수수염차",
+     "price": "6,500원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "아이스티",
+     "price": "6,500원",
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    }
+   ],
+   "serviceAttributes": {
+    "wifi": true,
+    "serves": [
+     "alcohol"
+    ],
+    "dine_in": true,
+    "parking": false,
+    "takeout": true,
+    "delivery": true,
+    "reservable": true,
+    "parking_note": "자체 주차장은 없지만 인근 주차장(공영 등)을 이용할 수 있어요",
+    "parking_type": "nearby",
+    "venue_subtype": "chicken",
+    "group_friendly": true,
+    "payment_methods": [
+     "zero_pay"
+    ],
+    "restroom_gender_separated": true
+   },
+   "atmosphereScores": {
+    "group": 6,
+    "late_night": 6
+   },
+   "aiSummary": "을지로입구역 근처 가성비 치킨,닭강정. 모임·회식·심야에 적합. 황금올리브치킨 추천.",
+   "ownerIntro": null,
+   "influencerFeatures": null,
+   "legacy": null,
+   "culturalAssociations": null,
+   "reputation": {
+    "cross_source_confirmed": true,
+    "sample_size": "rich",
+    "recently_active": true,
+    "last_verified_days_ago": 0,
+    "regulars_favorite": false,
+    "concerns": [],
+    "basis": [
+     "2개 지도 소스에서 같은 곳으로 확인됐어요",
+     "리뷰 표본이 많아요(404건 기반)",
+     "최근까지 리뷰 활동이 이어지고 있어요"
+    ],
+    "caveats": []
+   },
+   "distanceM": 288,
+   "yumiReservation": "유미 파트너 매장 — 원하시면 이 채팅에서 바로 예약 요청을 보낼 수 있어요(사장님 승인 후 확정)."
+  },
+  {
+   "id": "1004758054",
+   "name": "선셋레코드",
+   "category": "restaurant",
+   "categoryLabel": "양식",
+   "location": {
+    "lat": 37.5656592,
+    "lng": 126.9912499
+   },
+   "address": {
+    "road": "서울특별시 중구 을지로12길 11 2층",
+    "jibun": "서울특별시 중구 을지로3가 320 2층"
+   },
+   "regionCode": "1114015500",
+   "confidence": 0.9,
+   "sourceCount": 2,
+   "possiblyClosed": false,
+   "lastSeenAt": "2026-10-13T00:39:44.374Z",
+   "placeUrl": "https://heyyumi.ai/places/1004758054",
+   "phone": null,
+   "homepage": null,
+   "bookingUrl": null,
+   "yumiReservable": true,
+   "reservationChannels": [
+    "yumi"
+   ],
+   "snsLinks": null,
+   "businessHours": [
+    {
+     "day": "mon",
+     "open": "17:00",
+     "close": "01:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "00:30",
+     "lastOrders": [
+      {
+       "time": "00:30",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": true
+    },
+    {
+     "day": "tue",
+     "open": "17:00",
+     "close": "01:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "00:30",
+     "lastOrders": [
+      {
+       "time": "00:30",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": true
+    },
+    {
+     "day": "wed",
+     "open": "17:00",
+     "close": "01:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "00:30",
+     "lastOrders": [
+      {
+       "time": "00:30",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": true
+    },
+    {
+     "day": "thu",
+     "open": "17:00",
+     "close": "01:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "00:30",
+     "lastOrders": [
+      {
+       "time": "00:30",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": true
+    },
+    {
+     "day": "fri",
+     "open": "17:00",
+     "close": "02:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "01:30",
+     "lastOrders": [
+      {
+       "time": "01:30",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": true
+    },
+    {
+     "day": "sat",
+     "open": "17:00",
+     "close": "02:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "01:30",
+     "lastOrders": [
+      {
+       "time": "01:30",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": true
+    },
+    {
+     "day": "sun",
+     "open": "17:00",
+     "close": "01:00",
+     "breaks": [],
+     "closed": false,
+     "lastOrder": "00:30",
+     "lastOrders": [
+      {
+       "time": "00:30",
+       "type": "영업시간"
+      }
+     ],
+     "endsNextDay": true
+    }
+   ],
+   "temporaryClosures": null,
+   "is24h": false,
+   "rating": null,
+   "reviewCount": 863,
+   "latestReviewDate": "2026-09-28T00:00:00.000Z",
+   "freshnessScore": 1,
+   "dataQuality": {
+    "recency": 1,
+    "veracity": 5,
+    "confidence": 0.9,
+    "completeness": 0.8,
+    "last_verified_days_ago": 0
+   },
+   "price": {
+    "level": null,
+    "avg": null,
+    "min": null,
+    "max": null
+   },
+   "menuSummary": {
+    "count": 5,
+    "items": [
+     "시그니처 칵테일",
+     "음식 안주",
+     "카페",
+     "몰트위스키",
+     "클래식 칵테일"
+    ]
+   },
+   "openNow": {
+    "open": false,
+    "reason": "before_open"
+   },
+   "closureSignal": null,
+   "promotion": null,
+   "photoCount": 1,
+   "nearestStation": {
+    "station": "을지로3가",
+    "walkMin": 1
+   },
+   "accessHints": {
+    "subway": [
+     {
+      "lines": [
+       "2호선",
+       "3호선"
+      ],
+      "station": "을지로3가",
+      "walkMin": 1,
+      "distanceM": 72
+     },
+     {
+      "lines": [
+       "2호선",
+       "5호선"
+      ],
+      "station": "을지로4가",
+      "walkMin": 9,
+      "distanceM": 578
+     },
+     {
+      "lines": [
+       "3호선",
+       "4호선"
+      ],
+      "station": "충무로",
+      "walkMin": 9,
+      "distanceM": 601
+     }
+    ]
+   },
+   "recommendedFor": [
+    "date",
+    "group_dining",
+    "late_night"
+   ],
+   "atmosphere": [
+    "trendy",
+    "cozy"
+   ],
+   "menu": [
+    {
+     "name": "시그니처 칵테일",
+     "price": null,
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "음식 안주",
+     "price": null,
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "카페",
+     "price": null,
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "몰트위스키",
+     "price": null,
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    },
+    {
+     "name": "클래식 칵테일",
+     "price": null,
+     "source": null,
+     "orderType": null,
+     "recommend": false
+    }
+   ],
+   "serviceAttributes": {
+    "wifi": true,
+    "serves": [
+     "coffee",
+     "alcohol"
+    ],
+    "dine_in": true,
+    "takeout": true,
+    "delivery": true,
+    "reservable": true,
+    "venue_subtype": "western",
+    "group_friendly": true,
+    "payment_methods": [
+     "zero_pay"
+    ],
+    "waiting_expected": true
+   },
+   "atmosphereScores": {
+    "cozy": 8.4,
+    "date": 9.5,
+    "group": 7.6,
+    "trendy": 9,
+    "late_night": 6
+   },
+   "aiSummary": "을지로3가역 근처 트렌디한 양식. 데이트·모임·회식에 적합. 시그니처 칵테일 추천.",
+   "ownerIntro": "선셋레코드는 신청곡과 함께 칵테일 등 주류를 즐기는 뮤직바입니다 :)",
+   "influencerFeatures": null,
+   "legacy": null,
+   "culturalAssociations": null,
+   "reputation": {
+    "cross_source_confirmed": true,
+    "sample_size": "rich",
+    "recently_active": true,
+    "last_verified_days_ago": 0,
+    "regulars_favorite": false,
+    "concerns": [],
+    "basis": [
+     "2개 지도 소스에서 같은 곳으로 확인됐어요",
+     "리뷰 표본이 많아요(863건 기반)",
+     "최근까지 리뷰 활동이 이어지고 있어요"
+    ],
+    "caveats": []
+   },
+   "distanceM": 737,
+   "yumiReservation": "유미 파트너 매장 — 원하시면 이 채팅에서 바로 예약 요청을 보낼 수 있어요(사장님 승인 후 확정)."
+  }
+ ],
+ "meta": {
+  "total": 10,
+  "page": 1,
+  "pageSize": 5,
+  "totalPages": 2,
+  "center": {
+   "lat": 37.56601,
+   "lng": 126.9829
+  },
+  "radius": 1000,
+  "sort": "discovery"
+ }
+}
