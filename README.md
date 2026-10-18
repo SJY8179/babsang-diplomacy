@@ -18,11 +18,11 @@
 
 ---
 
-## 왜 만들었나
+## 만들게 된 계기 
 
 회식 날짜가 잡히면 장소는 보통 막내가 정합니다. 채식하는 사람, 갑각류를 못 먹는 사람, 생각하는 예산도 퇴근길도 다 다릅니다. 단톡방에서 조건을 하나씩 받고, 지도 앱을 뒤지고, 마지막엔 가게마다 전화를 겁니다. **어디가 좋은지는 금방 찾아도, 오늘 열 명 자리가 있는지는 결국 전화해 봐야 압니다.**
 
-밥상외교는 그 마지막 전화를 없앱니다. [Hey Yumi](https://heyyumi.ai)가 AI용으로 정리한 매장 데이터와 **사장님께 직접 자리를 묻고 예약을 요청하는 통로**를 써서, 여러 사람의 조건을 맞추는 일부터 예약 확정까지 이어서 처리합니다.
+저희 서비스인 밥상외교는 그 마지막 전화를 없앱니다. [Hey Yumi](https://heyyumi.ai)가 AI용으로 정리한 매장 데이터와 **사장님께 직접 자리를 묻고 예약을 요청하는 통로**를 써서, 여러 사람의 조건을 맞추는 일부터 예약 확정까지 이어서 처리합니다.
 
 > YUMITHON 2026 (Hey Yumi × 하이드미플리즈 을지로) 출품작 · **Team ZERO WAIT**
 
@@ -132,11 +132,11 @@ flowchart LR
 ```mermaid
 sequenceDiagram
   autonumber
-  participant 막내
+  participant 사용자(팀 막내)
   participant 밥상외교
   participant HeyYumi as Hey Yumi
   participant 사장님
-  막내->>밥상외교: 예약 요청 (연락처 입력)
+  사용자(팀 막내)->>밥상외교: 예약 요청 (연락처 입력)
   밥상외교->>HeyYumi: request_reservation (1순위)
   HeyYumi->>사장님: 예약 요청 알림
   사장님-->>HeyYumi: 거절
@@ -145,7 +145,7 @@ sequenceDiagram
   HeyYumi->>사장님: 예약 요청 알림
   사장님-->>HeyYumi: 확정
   HeyYumi-->>밥상외교: confirmed
-  밥상외교-->>막내: 예약 확정 · 단톡방 공지문 · 2차 후보
+  밥상외교-->>사용자(팀 막내): 예약 확정 · 단톡방 공지문 · 2차 후보
 ```
 
 - 에이전트는 `YumiClient` 인터페이스에만 의존합니다. 데모 데이터(`FakeYumi`), 실제 API(`RestYumi`), 검색만 실제인 하이브리드를 설정 하나로 바꿉니다.
