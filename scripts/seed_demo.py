@@ -34,8 +34,8 @@ DEPTS = [
                 ("윤가은", "과장", "광화문", 30000, "없음", "조개", "한식", "조용한 분위기", True)]},
 ]
 
-if __name__ == "__main__":
-    st = Store()
+def seed(st: Store | None = None) -> list[str]:
+    st = st or Store()
     for d in DEPTS:
         st.db.execute("INSERT OR REPLACE INTO groups(id, name) VALUES (?, ?)", (d["id"], d["name"]))
         st.db.execute("DELETE FROM participants WHERE meeting_id IN (SELECT id FROM meetings WHERE group_id=?)", (d["id"],))
@@ -49,4 +49,8 @@ if __name__ == "__main__":
         for n, role, origin, budget, diet, allergy, food, mood, done in d["people"]:
             p = st.add_participant(m["id"], n, role, origin=origin, budget=budget, diet=diet, allergy=allergy, food=food, mood=mood)
             st.set_done(p["token"], done)
-    print("seeded:", [g["name"] for g in st.groups()])
+    return [g["name"] for g in st.groups()]
+
+
+if __name__ == "__main__":
+    print("seeded:", seed())

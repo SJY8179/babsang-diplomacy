@@ -15,6 +15,7 @@
   <h1 id="t" class="font-heading text-[1.9rem] leading-[1.25] tracking-[-0.04em] mt-6">회식</h1>
   <p id="w" class="font-hand text-[18px] text-primary-600 mt-1"></p>
   <p class="text-[12.5px] text-foreground-600 leading-[1.95] mt-3"><strong id="n" class="text-foreground-950 font-medium"></strong>님, 아래만 채우면 끝나요. 로그인은 필요 없어요. 입력한 내용은 이번 회식 장소를 고르는 데만 써요.</p>
+  <p id="pub" class="hidden mt-4 border border-accent-300 bg-accent-100 px-3 py-2 text-[11px] text-foreground-800">공개 데모예요. 실제 이름이나 연락처는 넣지 마세요.</p>
   <form id="f" class="grid gap-3.5 mt-6 text-[11px] text-foreground-600">
     <label>출발하는 역<input id="origin" class="field mt-1" placeholder="예: 신촌" required></label>
     <label>1인 예산(원)<input id="budget" class="field mt-1" type="number" step="1000" min="0" placeholder="예: 25000" required></label>
@@ -30,6 +31,7 @@
 <script>
 const token = location.pathname.split("/").pop();
 const $ = (s) => document.querySelector(s);
+fetch("/api/config").then((r) => r.json()).then((c) => { if (c.publicDemo) $("#pub").classList.remove("hidden"); }).catch(() => {});
 (async () => {
   const r = await fetch(`/api/p/${token}`);
   if (!r.ok) { $("#t").textContent = "링크가 올바르지 않아요"; $("#f").remove(); return; }

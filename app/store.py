@@ -95,7 +95,7 @@ class Store:
 
     def add_participant(self, mid: str, name: str, role: str | None = None, **fields) -> dict:
         import secrets
-        token = secrets.token_urlsafe(8)
+        token = secrets.token_urlsafe(16)
         self.db.execute("INSERT INTO participants(meeting_id, token, name, role) VALUES (?,?,?,?)", (mid, token, name, role))
         self.db.commit()
         if fields:

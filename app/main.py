@@ -1,6 +1,10 @@
 import json
+from contextlib import asynccontextmanager
+import time
+from collections import OrderedDict, defaultdict, deque
+from datetime import datetime
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Request
@@ -23,9 +27,74 @@ from app.store import Store
 from app.yumi.client import YumiError, describe_mode, make_client, normalize_place
 
 WEB = Path(__file__).resolve().parent.parent / "web"
-app = FastAPI(title="밥상외교")
+_PUB = settings.public_demo
+
+
+@asynccontextmanager
+async def lifespan(_app: FastAPI):
+    # 공개 데모는 디스크가 초기화될 수 있으므로, 비어 있으면 데모 데이터를 넣고 시작한다
+    if _PUB and not store.groups():
+        from scripts.seed_demo import seed
+        seed(store)
+    yield
+
+
+# 공개 데모에서는 API 문서를 숨긴다
+app = FastAPI(title="밥상외교", lifespan=lifespan, docs_url=None if _PUB else "/docs", redoc_url=None,
+              openapi_url=None if _PUB else "/openapi.json")
 yumi = make_client()
 store = Store()
+
+
+# ---------- 보안: 헤더 · 요청 수 제한 · 메모리 상한 ----------
+_HITS: dict[str, deque] = defaultdict(deque)
+_LIMITS = {"heavy": (12, 60), "write": (60, 60), "any": (240, 60)}  # (횟수, 초)
+
+
+def _client_ip(req: Request) -> str:
+    """요청 수 제한용(최선 노력). 프록시가 붙여 주는 헤더를 먼저 본다."""
+    for h in ("cf-connecting-ip", "true-client-ip"):
+        if req.headers.get(h):
+            return req.headers[h].strip()
+    fwd = req.headers.get("x-forwarded-for", "")
+    return (fwd.split(",")[0].strip() or (req.client.host if req.client else "")) or "unknown"
+
+
+def _bucket(req: Request) -> str:
+    path, method = req.url.path, req.method
+    if method == "POST" and (path.endswith("/plan") or path.startswith("/api/lab") or path.endswith("/blog")):
+        return "heavy"
+    return "write" if method in ("POST", "PUT", "PATCH", "DELETE") else "any"
+
+
+@app.middleware("http")
+async def guard(request: Request, call_next):
+    if _PUB and request.url.path.startswith("/api/") and not request.url.path.endswith("/events"):
+        kind = _bucket(request)
+        limit, window = _LIMITS[kind]
+        q, now = _HITS[f"{_client_ip(request)}:{kind}"], time.monotonic()
+        while q and now - q[0] > window:
+            q.popleft()
+        if len(q) >= limit:
+            from fastapi.responses import JSONResponse
+            return JSONResponse({"detail": "요청이 너무 많아요. 잠시 뒤 다시 시도해 주세요."}, status_code=429)
+        q.append(now)
+    resp = await call_next(request)
+    resp.headers.setdefault("X-Content-Type-Options", "nosniff")
+    resp.headers.setdefault("X-Frame-Options", "DENY")
+    resp.headers.setdefault("Referrer-Policy", "same-origin")
+    resp.headers.setdefault("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
+    return resp
+
+
+MAX_SESSIONS = 300
+
+
+def _remember(s: Session) -> None:
+    """세션은 메모리에 두되 오래된 것부터 지워 무한히 쌓이지 않게 한다."""
+    SESSIONS[s.id] = s
+    while len(SESSIONS) > MAX_SESSIONS:
+        SESSIONS.pop(next(iter(SESSIONS)))
 
 
 def _local_only(req: Request) -> None:
@@ -51,7 +120,7 @@ def _session(sid: str) -> Session:
 
 @app.get("/api/config")
 def config() -> dict:
-    return {"mode": settings.yumi_mode, "live": settings.yumi_live and not settings.live_places,
+    return {"mode": settings.yumi_mode, "publicDemo": _PUB, "live": settings.yumi_live and not settings.live_places,
             "livePlaces": list(settings.live_places) if settings.yumi_live else [], "label": describe_mode()["label"],
             "actions": settings.yumi_actions, "llm": bool(settings.llm_api_key),
             "areas": list(AREAS)}
@@ -72,30 +141,37 @@ def add_group(g: GroupIn) -> dict:
 
 
 class MeetingIn(BaseModel):
-    group_id: str
+    group_id: str = Field(max_length=60)
     title: str = Field(min_length=1, max_length=40)
-    when_at: str | None = None
-    area: str | None = None
+    when_at: str | None = Field(default=None, max_length=40)
+    area: str | None = Field(default=None, max_length=20)
+
+    @field_validator("when_at")
+    @classmethod
+    def _iso(cls, v: str | None) -> str | None:
+        if v:
+            datetime.fromisoformat(v)  # 형식이 틀리면 422
+        return v
 
 
 class ParticipantIn(BaseModel):
     name: str = Field(min_length=1, max_length=20)
-    role: str | None = None
-    origin: str | None = None
+    role: str | None = Field(default=None, max_length=20)
+    origin: str | None = Field(default=None, max_length=20)
     budget: int | None = Field(default=None, ge=0, le=500000)
-    diet: str | None = None
-    allergy: str | None = None
-    food: str | None = None
-    mood: str | None = None
+    diet: str | None = Field(default=None, max_length=40)
+    allergy: str | None = Field(default=None, max_length=40)
+    food: str | None = Field(default=None, max_length=40)
+    mood: str | None = Field(default=None, max_length=40)
 
 
 class ParticipantSelf(BaseModel):
-    origin: str | None = None
+    origin: str | None = Field(default=None, max_length=20)
     budget: int | None = Field(default=None, ge=0, le=500000)
-    diet: str | None = None
-    allergy: str | None = None
-    food: str | None = None
-    mood: str | None = None
+    diet: str | None = Field(default=None, max_length=40)
+    allergy: str | None = Field(default=None, max_length=40)
+    food: str | None = Field(default=None, max_length=40)
+    mood: str | None = Field(default=None, max_length=40)
 
 
 def _public_p(p: dict) -> dict:
@@ -179,7 +255,7 @@ async def plan_for_meeting(mid: str, relax: dict | None = None) -> dict:
     s.constraints, s.candidates = c, cands
     s.now_mode = is_now(c.when)
     s.meeting = {"id": mid, "title": m["title"], **summary, "relax": relax or {}}
-    SESSIONS[s.id] = s
+    _remember(s)
     return s.view()
 
 
@@ -203,6 +279,10 @@ PLACE_CACHE: dict[str, dict] = {}
 
 @app.get("/api/places/{place_id}")
 async def place_detail(place_id: str) -> dict:
+    if len(place_id) > 60:
+        raise HTTPException(400, "잘못된 가게 ID예요")
+    if place_id not in PLACE_CACHE and len(PLACE_CACHE) > 500:
+        PLACE_CACHE.clear()
     if place_id not in PLACE_CACHE:
         try:
             PLACE_CACHE[place_id] = await yumi.place(place_id)
@@ -232,7 +312,7 @@ async def plan(req: PlanRequest) -> dict:
         c.region_name = c.region_name or STATIONS.get(c.area)
     s = Session(group_id=req.group_id, constraints=c, profile=build_profile(store.visits(req.group_id)))
     s.now_mode = is_now(c.when)
-    SESSIONS[s.id] = s
+    _remember(s)
     must = ", ".join(ATTR_KO.get(a, a) for a in c.must) or "없음"
     s.bus.emit("coordinator", "parsed",
                f"조건 정리({how}): {c.area} · {c.party}명 · {c.when[5:16].replace('T', ' ') if c.when else '시간 미정'}"
@@ -329,6 +409,10 @@ LAB_PLACES: dict = {}
 @app.get("/api/lab/lookup")
 async def lab_lookup(q: str) -> dict:
     """이름으로 가게 하나 찾기. 읽기 전용이라 사장님께 아무것도 가지 않는다."""
+    if _PUB:
+        raise HTTPException(403, "공개 데모에서는 실매장 테스트를 열지 않아요")
+    if not 0 < len(q.strip()) <= 60:
+        raise HTTPException(400, "가게 이름을 확인해 주세요")
     try:
         raw = await yumi.lookup(q.strip())
     except YumiError as e:
@@ -352,6 +436,8 @@ class LabIn(BaseModel):
 
 @app.post("/api/lab/session")
 def lab_session(req: LabIn, request: Request) -> dict:
+    if _PUB:
+        raise HTTPException(403, "공개 데모에서는 실매장 테스트를 열지 않아요")
     if settings.yumi_live:
         _local_only(request)
     p = LAB_PLACES.get(req.place_id)
@@ -361,7 +447,7 @@ def lab_session(req: LabIn, request: Request) -> dict:
     s = Session(group_id=req.group_id, constraints=c, profile=build_profile([]))
     s.candidates = [Candidate(place=p, evidence=[Evidence(kind="data", label="직접 고른 가게")])]
     s.now_mode, s.script, s.lab = is_now(req.when), False, True
-    SESSIONS[s.id] = s
+    _remember(s)
     s.bus.emit("negotiator", "plan", f"실매장 테스트: {p.name} 한 곳만, 다른 가게로 넘어가지 않아요 · {describe_mode()['label']}")
     return s.view()
 

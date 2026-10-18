@@ -61,17 +61,18 @@ async function init() {
   $("#dept").onchange = () => selectGroup($("#dept").value);
   $("#new-meeting").onclick = () => openMeetingDialog(false);
   $("#meeting-form").onsubmit = saveMeeting;
-  $("#dev-toggle").onclick = () => setDev(!S.dev);
+  if ($("#dev-toggle")) $("#dev-toggle").onclick = () => setDev(!S.dev);
   S.dev = location.hash === "#lab" || localGet("dev") === "1";
   try {
     S.cfg = await api("/api/config");
-    $("#mode").innerHTML = `<i class="ri-shield-check-line"></i>${esc(S.cfg.label)}`;
+    $("#mode").innerHTML = `<i class="ri-shield-check-line"></i>${esc(S.cfg.publicDemo ? "공개 데모 · 실제 요청 없음" : S.cfg.label)}`;
+    if (S.cfg.publicDemo) { $("#dev-toggle").closest("li").remove(); S.dev = false; $("#public-note").classList.remove("hidden"); }
     if (S.cfg.live) $("#mode").className = $("#mode").className.replace(/secondary/g, "primary");
     S.cfg.areas.forEach((a) => $("#md-area").append(new Option(a, a)));
     await loadGroups();
     await selectGroup(S.groups.find((g) => g.id === localGet("gid"))?.id || S.groups.find((g) => g.name.startsWith("마케팅"))?.id || S.groups[0]?.id || "demo");
   } catch (e) { fail(e); }
-  renderLog(); setDev(S.dev);
+  renderLog(); if ($("#dev-toggle")) setDev(S.dev);
 }
 function localGet(k) { try { return localStorage.getItem(k); } catch { return null; } }
 function localSet(k, v) { try { localStorage.setItem(k, v); } catch { /* 저장소 없음 */ } }
@@ -546,9 +547,10 @@ function renderFooter() {
 
 // ---------- 개발자 모드 · 실매장 테스트 ----------
 function setDev(on) {
+  if (S.cfg?.publicDemo) on = false;
   S.dev = on; localSet("dev", on ? "1" : "0");
   $("#lab").classList.toggle("hidden", !on);
-  $("#dev-toggle").textContent = on ? "개발자 모드 끄기" : "개발자 모드 · 실매장 테스트";
+  if ($("#dev-toggle")) $("#dev-toggle").textContent = on ? "개발자 모드 끄기" : "개발자 모드 · 실매장 테스트";
   if (on) renderLab();
 }
 

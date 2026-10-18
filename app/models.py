@@ -85,13 +85,13 @@ class Reservation(BaseModel):
 
 
 class Feedback(BaseModel):
-    group_id: str
-    place_id: str
-    place_name: str
-    attrs: list[str] = Field(default_factory=list)
+    group_id: str = Field(max_length=60)
+    place_id: str = Field(max_length=60)
+    place_name: str = Field(min_length=1, max_length=60)
+    attrs: list[str] = Field(default_factory=list, max_length=20)
     satisfaction: float = Field(ge=1, le=5)
     revisit: bool
-    per_person: int | None = None
+    per_person: int | None = Field(default=None, ge=0, le=1_000_000)
 
 
 class PlanRequest(BaseModel):
